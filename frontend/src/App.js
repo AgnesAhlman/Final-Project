@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from 'components/Header';
 // import { Provider } from 'react-redux';
 // import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
@@ -15,7 +16,7 @@ export const App = () => {
     // <Provider store={store}>
       <BrowserRouter>
         <Routes>
-        <Route></Route>
+        <Route path="/" element={<Header/>} />
         </Routes>
       </BrowserRouter>
     // </Provider>
