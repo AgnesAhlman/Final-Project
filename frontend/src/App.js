@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
+// import Header from './components/Header';
+import AllPostersPage from './components/AllPostersPage';
+import StartPage from './components/StartPage';
 // import { Provider } from 'react-redux';
 // import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
@@ -14,7 +16,9 @@ export const App = () => {
     // <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route path="/PosterPage" element={<AllPostersPage />} />
+        <Route path="/" element={<StartPage />} />
+        {/* <Route path="/" element={<Header />} /> */}
       </Routes>
     </BrowserRouter>
     // </Provider>
