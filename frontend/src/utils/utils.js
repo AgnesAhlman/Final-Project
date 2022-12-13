@@ -1,3 +1,10 @@
-const BASE_URL = 'http://localhost:8090';
+const BASE_URL = 'http://localhost:8080';
 
-export const API_URL = (slug) => `${BASE_URL}/${slug}`;
+export const getPosters = () => {
+  return fetch(`${BASE_URL}/posters`)
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    })
+    .catch((error) => console.error(error));
+};
