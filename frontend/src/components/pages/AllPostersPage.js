@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getPosters } from '../utils/utils';
+import { getPosters } from '../utils/api';
 
 const AllPostersPage = () => {
   const [posters, setPosters] = useState([]);
@@ -19,7 +19,7 @@ const AllPostersPage = () => {
     <>
       <div>AllPostersPage</div>
       {posters.map((poster) => (
-        <p key={poster.posterID}>{poster.color}</p>
+        <p key={poster.posterID}>{poster}</p>
       ))}
     </>
   );
