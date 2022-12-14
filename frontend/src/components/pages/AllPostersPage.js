@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getPosters } from '../utils/api';
+import { getPosters } from '../../utils/api';
 
 const AllPostersPage = () => {
   const [posters, setPosters] = useState([]);
