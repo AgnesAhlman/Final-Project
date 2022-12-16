@@ -1,10 +1,11 @@
 const BASE_URL = 'http://localhost:8080';
 
-export const getPosters = () => {
-  return fetch(`${BASE_URL}/posters`)
-    .then((res) => res.json())
-    .then((data) => {
-      return data;
-    })
-    .catch((error) => console.error(error));
+export const fetchPosters = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}/posters`);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    return console.error(error);
+  }
 };

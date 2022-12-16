@@ -4,10 +4,11 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import AllPosterPage from './components/pages/AllPostersPage';
 import StartPage from './components/pages/StartPage';
+
 // import Cart from './components/cart/Cart';
 
-import { cartRed } from './reducers/cartRed';
-import { products } from './reducers/products';
+import cartRed from './reducers/cartRed';
+import products from './reducers/products';
 
 const reducer = combineReducers({
   cartRed: cartRed.reducer,
