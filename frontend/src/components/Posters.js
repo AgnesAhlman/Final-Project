@@ -16,12 +16,12 @@ const Posters = () => {
   // useEffect(() => {
   //   fetchAllPosters();
   // }, []);
-  const allProducts = useSelector((store) => store.products);
+  const allProducts = useSelector((store) => store.products.items);
 
   return (
     <>
       {allProducts.map((product) => (
-        <Poster key={product.id} product={product} />
+        <Poster key={product.posterID} product={product} />
       ))}
     </>
   );

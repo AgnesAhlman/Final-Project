@@ -26,12 +26,18 @@ const productData = [
 
 const products = createSlice({
   name: 'products',
-  initialState: productData
+  initialState: {
+    items: productData,
+    error: null,
+    loading: false
+  }
 });
 
 // export const getPosters = () => {
 //   return async (dispatch, getState) => {
+//     dispatch(products.actions.setLoading(true));
 //     const posters = await fetchPosters();
+//     dispatch(products.actions.setLoading(false));
 //     setPosters;
 //   };
 // };
