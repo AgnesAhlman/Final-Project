@@ -12,7 +12,10 @@ const CartItem = (props) => {
         <span>{props.product.price * props.product.quantity}:-</span>
       </div>
 
-      <button type="button" onClick={() => {}}>
+      <button
+        type="button"
+        onClick={() => dispatch(cartRed.actions.removeItem(props.product))}
+      >
         -
       </button>
       <button
