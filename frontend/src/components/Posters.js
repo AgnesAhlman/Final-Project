@@ -1,22 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-// import { fetchPosters } from '../utils/api';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPosters } from '../reducers/products';
+
 import Poster from './Poster';
 
 const Posters = () => {
-  // const [posters, setPosters] = useState([]);
-  // console.log(posters);
-
-  // const fetchAllPosters = () => {
-  //   fetchPosters().then((data) => {
-  //     setPosters(data);
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   fetchAllPosters();
-  // }, []);
+  const dispatch = useDispatch();
   const allProducts = useSelector((store) => store.products.items);
+
+  useEffect(() => {
+    dispatch(getPosters());
+  }, [dispatch]);
 
   return (
     <>
