@@ -1,11 +1,11 @@
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import AllPosterPage from './components/pages/AllPostersPage';
 import StartPage from './components/pages/StartPage';
-
-// import Cart from './components/cart/Cart';
 
 import cartRed from './reducers/cartRed';
 import products from './reducers/products';
@@ -17,6 +17,11 @@ const reducer = combineReducers({
 });
 
 const store = configureStore({ reducer });
+
+// Stores the data even though the page is refreshed
+store.subscribe(() =>
+  localStorage.setItem('cart', JSON.stringify(store.getState().products.items))
+);
 
 export const App = () => {
   return (
