@@ -1,4 +1,8 @@
-const BASE_URL = 'http://localhost:8080';
+/**
+ * use environment variable API_URL to connect to the API,
+ * if it doesn't exist default to localhost
+ */
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
 export const fetchPosters = async () => {
   try {
