@@ -7,10 +7,7 @@ const CartItem = (props) => {
   return (
     <li>
       <div>
-        <img
-          src={`https://storage.cloud.google.com/finalproject-posters/${props.product.img}`}
-          alt=""
-        />
+        <img src={props.product.img} alt="" />
         <p>{props.product.title}</p>
         <span>x{props.product.quantity} </span>
         <span>{props.product.price * props.product.quantity}:-</span>
