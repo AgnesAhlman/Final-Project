@@ -9,6 +9,7 @@ import StartPage from './components/pages/StartPage';
 
 import cartRed from './reducers/cartRed';
 import products from './reducers/products';
+import CheckoutPage from './components/pages/CheckoutPage';
 
 const reducer = combineReducers({
   cartRed: cartRed.reducer,
@@ -24,6 +25,7 @@ export const App = () => {
         <Routes>
           <Route path="/PosterPage" element={<AllPosterPage />} />
           <Route path="/" element={<StartPage />} />
+          <Route path="/CheckoutPage" element={<CheckoutPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

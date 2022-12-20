@@ -1,14 +1,16 @@
 import React from 'react';
-import Cart from '../cart/Cart';
+import { Link } from 'react-router-dom';
+
 import Posters from '../Posters';
 
 const AllPostersPage = () => {
   return (
     <>
       <div>AllPostersPage</div>
-      <Cart />
+
       <div>
         <Posters />
+        <Link to="/CheckoutPage">Checkout</Link>
       </div>
     </>
   );
