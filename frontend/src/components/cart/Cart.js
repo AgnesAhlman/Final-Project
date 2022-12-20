@@ -8,10 +8,7 @@ import CartItem from './CartItem';
 const Cart = () => {
   const products = useSelector((store) => store.cartRed.items);
   const totalPrice = useSelector((store) =>
-    store.cartRed.items.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    )
+    store.cartRed.items.reduce((total, item) => total + item.price * item.quantity, 0)
   );
 
   return (
