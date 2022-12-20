@@ -4,11 +4,13 @@ import cartRed from '../reducers/cartRed';
 
 const Poster = (props) => {
   const dispatch = useDispatch();
+  console.log(props.product.img);
 
   return (
     <article>
       <span> {props.product.title}</span>
       <p>{props.product.price}</p>
+      <img src={props.product.img} alt="" />
 
       <button
         type="button"

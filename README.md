@@ -1,14 +1,14 @@
 # Final-Project
-Final-Project
+
+> Final-Project
 
 
-Todo:
+## Todo:
 
+**Backend:**
 
-
-Backend:
-Connect Json to images
-Display info from database
+- [x] Connect Json to images
+- [x] Display info from database
 
 
 Frontend:

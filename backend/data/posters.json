@@ -1,58 +1,65 @@
 [
+  {
+    "posterID": 1,
+    "group": 1,
+    "title": "test1",
+    "color": "green",
+    "description": "test",
+    "img": "https://storage.cloud.google.com/finalproject-posters/poster1.png",
+    "price": 500,
+    "size": "small"
+  },
+  {
+    "posterID": 2,
+    "group": 2,
+    "title": "test2",
+    "color": "green",
+    "description": "test",
+    "img": "https://storage.cloud.google.com/finalproject-posters/poster2.png",
+    "price": 500,
+    "size": "small"
+  },
 
-    {
-        "posterID": 1,
-        "group": 1,
-        "title": "test1",
-        "color": "green",
-        "description": "test",
-        "img": "url..",
-        "price": "10kr",
-        "size": "small"        
-    },
-    {
-        "posterID": 2,
-        "group": 2,
-        "title": "test2",
-        "color": "green",
-        "description": "test",
-        "img": "url..",
-        "price": "10kr",
-        "size": "small"        
-    },
+  {
+    "posterID": 3,
+    "group": 3,
+    "title": "test3",
+    "color": "green",
+    "description": "test",
+    "img": "https://storage.cloud.google.com/finalproject-posters/poster1.png",
+    "price": 500,
+    "size": "small"
+  },
 
-    {
-        "posterID": 3,
-        "group": 3,
-        "title": "test3",
-        "color": "green",
-        "description": "test",
-        "img": "url..",
-        "price": "10kr",
-        "size": "small"        
-    },
+  {
+    "posterID": 4,
+    "group": 4,
+    "title": "test4",
+    "color": "green",
+    "description": "test",
+    "img": "https://storage.cloud.google.com/finalproject-posters/poster2.png",
+    "price": 500,
+    "size": "small"
+  },
 
-    {
-        "posterID": 4,
-        "group": 4,
-        "title": "test4",
-        "color": "green",
-        "description": "test",
-        "img": "url..",
-        "price": "10kr",
-        "size": "small"        
-    },
-
-    {
-        "posterID": 5,
-        "group": 5,
-        "title": "test5",
-        "color": "green",
-        "description": "test",
-        "img": "url..",
-        "price": "10kr",
-        "size": "small"        
-    }
-
-
+  {
+    "posterID": 5,
+    "group": 5,
+    "title": "test5",
+    "color": "green",
+    "description": "test",
+    "img": "https://storage.cloud.google.com/finalproject-posters/poster1.png",
+    "price": 500,
+    "size": "small"
+  },
+  {
+    "posterID": 6,
+    "group": 6,
+    "title": "test5",
+    "color": "green",
+    "description": "test",
+    "img": "https://storage.cloud.google.com/finalproject-posters/poster1.png",
+    "price": 500,
+    "size": "small"
+  }
 ]

@@ -7,8 +7,9 @@ const AllPostersPage = () => {
     <>
       <div>AllPostersPage</div>
       <Cart />
-
-      <Posters />
+      <div>
+        <Posters />
+      </div>
     </>
   );
 };
