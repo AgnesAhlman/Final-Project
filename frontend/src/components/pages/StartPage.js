@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Wrapper } from '../styles/Containers';
 
 const StartPage = () => {
   return (
-    <>
-      <p> Start Page</p>
-      <p>Welcome! </p>
+    <Wrapper>
       <Link to="/PosterPage"> Go to all posters</Link>
-    </>
+    </Wrapper>
   );
 };
 
