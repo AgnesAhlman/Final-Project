@@ -16,7 +16,9 @@ const Posters = () => {
   return (
     <>
       {allProducts.map((product) => (
-        <Poster key={product.posterID} product={product} />
+        <div key={product.posterID}>
+          <Poster product={product} />
+        </div>
       ))}
     </>
   );

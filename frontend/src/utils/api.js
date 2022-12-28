@@ -14,9 +14,9 @@ export const fetchPosters = async () => {
   }
 };
 
-export const fetchPostersById = async () => {
+export const fetchPostersById = async (id) => {
   try {
-    const res = await fetch(`${BASE_URL}/posters/:id`);
+    const res = await fetch(`${BASE_URL}/posters/${id}`);
     const data = await res.json();
     return data;
   } catch (error) {
