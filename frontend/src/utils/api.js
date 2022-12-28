@@ -13,3 +13,13 @@ export const fetchPosters = async () => {
     return console.error(error);
   }
 };
+
+export const fetchPostersById = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}/posters/:id`);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    return console.error(error);
+  }
+};

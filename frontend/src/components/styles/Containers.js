@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 100vw;
+  /* width: calc(100vw - 1rem * 2); */
   min-height: 100vh;
   background-color: var(--main-bg-color);
+  padding: 1rem;
 `;
 
 export const PosterContent = styled.article`
