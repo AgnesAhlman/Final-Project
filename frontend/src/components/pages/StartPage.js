@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import Header from '../../blocks/Header';
 import Navbar from '../../blocks/Navbar';
 
@@ -20,7 +20,6 @@ const StartPage = () => {
           <img src="logo.png" alt="logo" />
         </Header.LogoContainer>
       </Header>
-      <Link to="/PosterPage"> Go to all posters</Link>
     </Wrapper>
   );
 };
