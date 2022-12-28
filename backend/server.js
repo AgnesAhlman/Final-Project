@@ -1,7 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import PosterData from './data/posters.json';
+// import PosterData from './data/posters.json';
+import { isValidObjectId } from 'mongoose';
+import { Poster } from './mongoose';
 
 // Defines the port the app will run on. Defaults to 8080, but can be overridden
 // when starting the server. Example command to overwrite PORT env variable value:
@@ -19,8 +21,30 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posters', async (req, res) => {
-  // const posters = await Poster.find();
-  res.json(PosterData);
+  try {
+    const posters = await Poster.find();
+    res.status(200).json(posters);
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
+app.get('/posters/:id', async (req, res) => {
+  try {
+    if (!isValidObjectId(req.params.id)) {
+      return res.status(400).json({
+        success: false,
+        body: {
+          message: 'invalid id'
+        }
+      });
+    }
+
+    const singlePoster = await Poster.findById(req.params.id);
+    res.status(200).json(singlePoster);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // Start the server
