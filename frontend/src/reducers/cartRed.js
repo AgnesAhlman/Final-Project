@@ -13,7 +13,7 @@ const cartRed = createSlice({
     addItem: (state, action) => {
       console.log(action);
       const existingProduct = state.items.find(
-        (items) => items.posterID === action.payload.posterID
+        (items) => items._id === action.payload._id
       );
       if (existingProduct) {
         existingProduct.quantity += 1;
@@ -24,12 +24,12 @@ const cartRed = createSlice({
 
     removeItem: (state, action) => {
       const existingProduct = state.items.find(
-        (items) => items.posterID === action.payload.posterID
+        (items) => items._id === action.payload._id
       );
 
       if (existingProduct && existingProduct.quantity === 1) {
         state.items = state.items.filter(
-          (item) => item.posterID !== action.payload.posterID
+          (item) => item._id !== action.payload._id
         );
       } else if (existingProduct) {
         existingProduct.quantity -= 1;

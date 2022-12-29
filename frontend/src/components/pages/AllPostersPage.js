@@ -13,7 +13,7 @@ const AllPostersPage = () => {
     <>
       <Navbar>
         <Links to="/">Home</Links>
-        <Links to="/CheckoutPage">
+        <Links to="/checkout">
           <Navbar.Icon src="cartIcon.svg" alt="cartIcon" />
         </Links>
       </Navbar>
