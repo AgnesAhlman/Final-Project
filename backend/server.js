@@ -40,7 +40,21 @@ app.get('/posters/:id', async (req, res) => {
       });
     }
 
+    console.log(req.params.id);
+
     const singlePoster = await Poster.findById(req.params.id);
+    console.log(singlePoster);
+
+    // If single poster was not found, return a 404 error
+    if (!singlePoster) {
+      return res.status(404).json({
+        success: false,
+        body: {
+          message: 'could not find poster'
+        }
+      });
+    }
+
     res.status(200).json(singlePoster);
   } catch (err) {
     res.status(500).json(err);

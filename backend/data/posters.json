@@ -1,7 +1,5 @@
 [
   {
-    "_id": "63a356755fac2006f301dae3",
-    "posterID": 1,
     "group": 1,
     "title": "body",
     "color": "beige",
@@ -11,8 +9,6 @@
     "size": "small"
   },
   {
-    "_id": "63a356755fac2006f301dae4",
-    "posterID": 2,
     "group": 1,
     "title": "Body Black&White",
     "color": "grey",
@@ -22,8 +18,6 @@
     "size": "small"
   },
   {
-    "_id": "63a356755fac2006f301dae5",
-    "posterID": 3,
     "group": 1,
     "title": "Body",
     "color": "blue",
@@ -33,8 +27,6 @@
     "size": "small"
   },
   {
-    "_id": "63a356755fac2006f301dae6",
-    "posterID": 4,
     "group": 2,
     "title": "flower",
     "color": "beige",
@@ -44,8 +36,6 @@
     "size": "small"
   },
   {
-    "_id": "63a356755fac2006f301dae7",
-    "posterID": 5,
     "group": 2,
     "title": "Flower",
     "color": "beige",
@@ -55,8 +45,6 @@
     "size": "small"
   },
   {
-    "_id": "63a356755fac2006f301dae8",
-    "posterID": 6,
     "group": 2,
     "title": "Flower",
     "color": "blue",
