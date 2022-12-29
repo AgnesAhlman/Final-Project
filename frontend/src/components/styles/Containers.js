@@ -5,10 +5,3 @@ export const Wrapper = styled.div`
   background-color: var(--main-bg-color);
   padding: 3rem;
 `;
-
-export const PosterContent = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;

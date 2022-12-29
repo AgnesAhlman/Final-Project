@@ -4,7 +4,7 @@ import React from 'react';
 import Posters from '../Posters';
 
 import { GridContainer } from '../styles/Grid';
-
+import Links from '../../elements/Links';
 import Navbar from '../../blocks/Navbar';
 
 const AllPostersPage = () => {
@@ -12,10 +12,10 @@ const AllPostersPage = () => {
   return (
     <>
       <Navbar>
-        <Navbar.Links to="/">Home</Navbar.Links>
-        <Navbar.Links to="/CheckoutPage">
+        <Links to="/">Home</Links>
+        <Links to="/CheckoutPage">
           <Navbar.Icon src="cartIcon.svg" alt="cartIcon" />
-        </Navbar.Links>
+        </Links>
       </Navbar>
 
       <GridContainer>

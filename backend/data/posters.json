@@ -1,64 +1,67 @@
 [
   {
+    "_id": "63a356755fac2006f301dae3",
     "posterID": 1,
     "group": 1,
-    "title": "test1",
-    "color": "green",
+    "title": "body",
+    "color": "beige",
     "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/poster1.png",
+    "img": "https://storage.googleapis.com/final-project-posters/body.jpg",
     "price": 500,
     "size": "small"
   },
   {
+    "_id": "63a356755fac2006f301dae4",
     "posterID": 2,
-    "group": 2,
-    "title": "test2",
-    "color": "green",
+    "group": 1,
+    "title": "Body Black&White",
+    "color": "grey",
     "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/poster2.png",
+    "img": "https://storage.googleapis.com/final-project-posters/bodyBW.jpg",
     "price": 500,
     "size": "small"
   },
-
   {
+    "_id": "63a356755fac2006f301dae5",
     "posterID": 3,
-    "group": 3,
-    "title": "test3",
-    "color": "green",
+    "group": 1,
+    "title": "Body",
+    "color": "blue",
     "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/poster1.png",
+    "img": "https://storage.googleapis.com/final-project-posters/bodyblue.jpg",
     "price": 500,
     "size": "small"
   },
-
   {
+    "_id": "63a356755fac2006f301dae6",
     "posterID": 4,
-    "group": 4,
-    "title": "test4",
-    "color": "green",
+    "group": 2,
+    "title": "flower",
+    "color": "beige",
     "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/poster2.png",
+    "img": "https://storage.googleapis.com/final-project-posters/flower.jpg",
     "price": 500,
     "size": "small"
   },
-
   {
+    "_id": "63a356755fac2006f301dae7",
     "posterID": 5,
-    "group": 5,
-    "title": "test5",
-    "color": "green",
+    "group": 2,
+    "title": "Flower",
+    "color": "beige",
     "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/poster1.png",
+    "img": "https://storage.googleapis.com/final-project-posters/flowerbeige.jpg",
     "price": 500,
     "size": "small"
   },
   {
+    "_id": "63a356755fac2006f301dae8",
     "posterID": 6,
-    "group": 6,
-    "title": "test5",
-    "color": "green",
+    "group": 2,
+    "title": "Flower",
+    "color": "blue",
     "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/poster1.png",
+    "img": "https://storage.googleapis.com/final-project-posters/flowerblue.jpg",
     "price": 500,
     "size": "small"
   }

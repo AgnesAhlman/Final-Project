@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import Links from './Links';
 import Icon from './Icon';
 
 const Navbar = styled.div`
@@ -14,7 +13,6 @@ const Navbar = styled.div`
   width: calc(100% - 2rem);
 `;
 
-Navbar.Links = Links;
 Navbar.Icon = Icon;
 
 export default Navbar;
