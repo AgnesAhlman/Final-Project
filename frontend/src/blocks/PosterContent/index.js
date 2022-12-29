@@ -2,11 +2,18 @@ import styled from 'styled-components';
 
 import Image from './Image';
 
-const PosterContent = styled.article`
+const PosterContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 2rem;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 PosterContent.Image = Image;

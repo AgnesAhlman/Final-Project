@@ -12,13 +12,13 @@ const Poster = (props) => {
   }
 
   return (
-    <>
+    <PosterContent>
       <Links to={`/posters/${props.product._id}`}>
-        <PosterContent>
+        <article>
           <PosterContent.Image src={props.product.img} alt="" />
           <span> {props.product.title}</span>
           <p>fr. {props.product.price} kr</p>
-        </PosterContent>
+        </article>
       </Links>
 
       <button
@@ -27,7 +27,7 @@ const Poster = (props) => {
       >
         Add to cart
       </button>
-    </>
+    </PosterContent>
   );
 };
 

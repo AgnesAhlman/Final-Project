@@ -10,7 +10,7 @@ const StartPage = () => {
   return (
     <Wrapper>
       <Header>
-        <Navbar>
+        <Navbar primary>
           <Links to="/posters">About</Links>
           <Links to="/posters">Posters</Links>
           <Links to="/checkout">

@@ -11,7 +11,7 @@ const AllPostersPage = () => {
   // const products = useSelector((store) => store.cartRed.items);
   return (
     <>
-      <Navbar>
+      <Navbar shadow>
         <Links to="/">Home</Links>
         <Links to="/checkout">
           <Navbar.Icon src="cartIcon.svg" alt="cartIcon" />
