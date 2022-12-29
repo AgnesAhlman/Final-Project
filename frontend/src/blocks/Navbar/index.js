@@ -6,7 +6,8 @@ import Icon from './Icon';
 
 const Navbar = styled.div`
   position: ${(props) => (props.primary ? 'absolute' : 'fixed')};
-  background-color: white;
+  background-color: ${(props) => (props.primary ? 'none' : '#eceeeb')};
+
   display: flex;
   flex-direction: row;
   align-items: center;
