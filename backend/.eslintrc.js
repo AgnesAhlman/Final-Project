@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: ['prettier'],
   rules: {
+    'no-underscore-dangle': 'off',
     'arrow-body-style': 'off',
     'class-methods-use-this': 'off',
     'brace-style': [
