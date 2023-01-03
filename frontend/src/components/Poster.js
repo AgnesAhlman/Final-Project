@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import cartRed from '../reducers/cartRed';
-import { PosterContent } from './styles/Containers';
+import PosterContent from '../blocks/PosterContent';
+import Links from '../elements/Links';
 
 const Poster = (props) => {
   const dispatch = useDispatch();
@@ -13,11 +13,13 @@ const Poster = (props) => {
 
   return (
     <PosterContent>
-      <Link to={`/posters/${props.product._id}`}>
-        <img src={props.product.img} alt="" />
-        <span> {props.product.title}</span>
-        <p>fr. {props.product.price} kr</p>
-      </Link>
+      <Links to={`/posters/${props.product._id}`}>
+        <article>
+          <PosterContent.Image src={props.product.img} alt="" />
+          <span> {props.product.title}</span>
+          <p>fr. {props.product.price} kr</p>
+        </article>
+      </Links>
 
       <button
         type="button"

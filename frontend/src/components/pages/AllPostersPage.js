@@ -4,23 +4,28 @@ import React from 'react';
 import Posters from '../Posters';
 
 import { GridContainer } from '../styles/Grid';
-
+import Links from '../../elements/Links';
 import Navbar from '../../blocks/Navbar';
+import { AllPosterWrapper, Background } from '../styles/Containers';
 
 const AllPostersPage = () => {
   // const products = useSelector((store) => store.cartRed.items);
   return (
     <>
-      <Navbar>
-        <Navbar.Links to="/">Home</Navbar.Links>
-        <Navbar.Links to="/CheckoutPage">
+      <Navbar shadow>
+        <Links to="/">Home</Links>
+        <Links to="/checkout">
           <Navbar.Icon src="cartIcon.svg" alt="cartIcon" />
-        </Navbar.Links>
+        </Links>
       </Navbar>
-
-      <GridContainer>
-        <Posters />
-      </GridContainer>
+      <AllPosterWrapper>
+        <Background>
+          <h1>POSTERS</h1>
+          <GridContainer>
+            <Posters />
+          </GridContainer>
+        </Background>
+      </AllPosterWrapper>
     </>
   );
 };

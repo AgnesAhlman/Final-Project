@@ -26,7 +26,7 @@ const Cart = () => {
 
       <ul>
         {cartItems.map((product) => (
-          <CartItem key={product.posterID} product={product} />
+          <CartItem key={product._id} product={product} />
         ))}
       </ul>
     </div>

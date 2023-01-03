@@ -18,7 +18,7 @@ const products = createSlice({
       );
       if (existingIdIndex > -1) {
         store.items[existingIdIndex] = action.payload;
-      } else {
+      } else if (action.payload) {
         store.items.push(action.payload);
       }
     }
