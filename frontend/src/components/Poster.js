@@ -1,17 +1,23 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import cartRed from '../reducers/cartRed';
 import { PosterContent } from './styles/Containers';
 
 const Poster = (props) => {
   const dispatch = useDispatch();
-  console.log(props.product.img);
+
+  if (!props.product) {
+    return null;
+  }
 
   return (
     <PosterContent>
-      <img src={props.product.img} alt="" />
-      <span> {props.product.title}</span>
-      <p>fr. {props.product.price} kr</p>
+      <Link to={`/posters/${props.product._id}`}>
+        <img src={props.product.img} alt="" />
+        <span> {props.product.title}</span>
+        <p>fr. {props.product.price} kr</p>
+      </Link>
 
       <button
         type="button"

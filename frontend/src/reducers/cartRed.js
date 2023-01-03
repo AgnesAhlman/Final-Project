@@ -12,27 +12,27 @@ const cartRed = createSlice({
   reducers: {
     addItem: (state, action) => {
       console.log(action);
-      const exsistingProduct = state.items.find(
+      const existingProduct = state.items.find(
         (items) => items.posterID === action.payload.posterID
       );
-      if (exsistingProduct) {
-        exsistingProduct.quantity += 1;
+      if (existingProduct) {
+        existingProduct.quantity += 1;
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
     },
 
     removeItem: (state, action) => {
-      const exsistingProduct = state.items.find(
+      const existingProduct = state.items.find(
         (items) => items.posterID === action.payload.posterID
       );
 
-      if (exsistingProduct && exsistingProduct.quantity === 1) {
+      if (existingProduct && existingProduct.quantity === 1) {
         state.items = state.items.filter(
           (item) => item.posterID !== action.payload.posterID
         );
-      } else if (exsistingProduct) {
-        exsistingProduct.quantity -= 1;
+      } else if (existingProduct) {
+        existingProduct.quantity -= 1;
       }
     }
   }

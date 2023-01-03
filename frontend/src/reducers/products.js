@@ -1,28 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchPosters } from '../utils/api';
-
-// const productData = [
-//   {
-//     posterID: 1,
-//     group: 1,
-//     title: 'test1',
-//     color: 'green',
-//     description: 'test',
-//     img: 'url..',
-//     price: 300,
-//     size: 'small'
-//   },
-//   {
-//     posterID: 2,
-//     group: 1,
-//     title: 'test2',
-//     color: 'green',
-//     description: 'test',
-//     img: 'url..',
-//     price: 500,
-//     size: 'small'
-//   }
-// ];
+import { fetchPosters, fetchPostersById } from '../utils/api';
 
 const products = createSlice({
   name: 'products',
@@ -34,6 +11,16 @@ const products = createSlice({
   reducers: {
     setItems: (store, action) => {
       store.items = action.payload;
+    },
+    setSingleItem: (store, action) => {
+      const existingIdIndex = store.items.findIndex(
+        (item) => item._id === action.payload._id
+      );
+      if (existingIdIndex > -1) {
+        store.items[existingIdIndex] = action.payload;
+      } else {
+        store.items.push(action.payload);
+      }
     }
   }
 });
@@ -42,6 +29,14 @@ export const getPosters = () => {
   return (dispatch) => {
     fetchPosters().then((data) => {
       dispatch(products.actions.setItems(data));
+    });
+  };
+};
+
+export const getSinglePosters = (id) => {
+  return (dispatch) => {
+    fetchPostersById(id).then((data) => {
+      dispatch(products.actions.setSingleItem(data));
     });
   };
 };

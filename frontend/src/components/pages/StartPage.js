@@ -10,9 +10,9 @@ const StartPage = () => {
     <Wrapper>
       <Header>
         <Navbar>
-          <Navbar.Links to="/PosterPage">About</Navbar.Links>
-          <Navbar.Links to="/PosterPage">Posters</Navbar.Links>
-          <Navbar.Links to="/CheckoutPage">
+          <Navbar.Links to="/posters">About</Navbar.Links>
+          <Navbar.Links to="/posters">Posters</Navbar.Links>
+          <Navbar.Links to="/checkout">
             <Navbar.Icon src="cartIcon.svg" alt="cartIcon" />
           </Navbar.Links>
         </Navbar>
