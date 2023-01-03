@@ -59,12 +59,7 @@ const CartSchema = new mongoose.Schema(
           default: 1
         }
       }
-    ],
-    bill: {
-      type: Number,
-      required: true,
-      default: 0
-    }
+    ]
   },
   {
     timestamps: true

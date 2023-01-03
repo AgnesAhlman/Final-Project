@@ -89,11 +89,13 @@ app.post('/login', async (req, res) => {
   }
 });
 
+// Middleware
 const authenticateUser = async (req, res, next) => {
   const accessToken = req.header('Authorization');
   try {
     const user = await User.findOne({ accessToken });
     if (user) {
+      res.locals.user = user;
       next();
     } else {
       res.status(401).json({
@@ -150,25 +152,26 @@ app.get('/posters/:id', async (req, res) => {
   }
 });
 
-app.get('/cartPosters', authenticateUser);
-app.get('/cartPosters', async (req, res) => {
-  const cartPosters = await Cart.find({});
-  res.status(200).json({ success: true, response: cartPosters });
+app.get('/cart', authenticateUser, async (req, res) => {
+  const cart = await Cart.find({});
+  res.status(200).json({ success: true, response: cart });
 });
 
-app.post('/posters', async (req, res) => {
+app.post('/cart', authenticateUser, async (req, res) => {
   try {
-    const newPoster = new Poster({
-      ...req.body,
-      owner: req.user._id
+    const cart = new Cart({
+      owner: res.locals.user._id,
+      poster: req.body
     });
-    await newPoster.save();
-    res.status(201).send(newPoster);
+    await cart.save();
+    res.status(201).send(cart);
   } catch (error) {
     console.log({ error });
     res.status(400).send({ message: 'error' });
   }
 });
+
+// Update Cart
 
 // Start the server
 app.listen(port, () => {
