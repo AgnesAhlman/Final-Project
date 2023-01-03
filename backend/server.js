@@ -1,17 +1,12 @@
-/* eslint-disable object-shorthand */
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-// import PosterData from './data/posters.json';
-// import mongoose from 'mongoose';
-import { isValidObjectId, mongoose } from 'mongoose';
-import bcrypt from 'bcrypt';
-import crypto from 'crypto';
-import { Poster } from './mongoose';
 
-// Defines the port the app will run on. Defaults to 8080, but can be overridden
-// when starting the server. Example command to overwrite PORT env variable value:
-// PORT=9000 npm start
+import { isValidObjectId } from 'mongoose';
+import bcrypt from 'bcrypt';
+
+import { Poster, User, Cart } from './mongoose';
+
 const port = process.env.PORT || 8080;
 const app = express();
 
@@ -24,70 +19,11 @@ app.get('/', (req, res) => {
   res.send('Hello Technigo!');
 });
 
-app.get('/posters', async (req, res) => {
-  try {
-    const posters = await Poster.find();
-    res.status(200).json(posters);
-  } catch (err) {
-    res.status(404).json(err);
-  }
-});
-
-app.get('/posters/:id', async (req, res) => {
-  try {
-    if (!isValidObjectId(req.params.id)) {
-      return res.status(400).json({
-        success: false,
-        body: {
-          message: 'invalid id'
-        }
-      });
-    }
-
-    console.log(req.params.id);
-
-    const singlePoster = await Poster.findById(req.params.id);
-    console.log(singlePoster);
-
-    // If single poster was not found, return a 404 error
-    if (!singlePoster) {
-      return res.status(404).json({
-        success: false,
-        body: {
-          message: 'could not find poster'
-        }
-      });
-    }
-
-    res.status(200).json(singlePoster);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-const UserSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true
-  },
-
-  accessToken: {
-    type: String,
-    default: () => crypto.randomBytes(128).toString('hex')
-  }
-});
-
-const User = mongoose.model('User', UserSchema);
-
 app.post('/register', async (req, res) => {
   const { username, password } = req.body;
+  console.log('heeej', username);
+  const salt = bcrypt.genSaltSync();
   try {
-    const salt = bcrypt.genSaltSync();
     if (password.length < 8) {
       res.status(400).json({
         success: false,
@@ -95,7 +31,7 @@ app.post('/register', async (req, res) => {
       });
     } else {
       const newUser = await new User({
-        username: username,
+        username,
         password: bcrypt.hashSync(password, salt)
       }).save();
       res.status(201).json({
@@ -156,7 +92,7 @@ app.post('/login', async (req, res) => {
 const authenticateUser = async (req, res, next) => {
   const accessToken = req.header('Authorization');
   try {
-    const user = await User.findOne({ accessToken: accessToken });
+    const user = await User.findOne({ accessToken });
     if (user) {
       next();
     } else {
@@ -173,43 +109,46 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
-const ObjectID = mongoose.Schema.Types.ObjectId;
-
-const CartSchema = new mongoose.Schema(
-  {
-    owner: {
-      type: ObjectID,
-      required: true,
-      ref: 'User'
-    },
-    poster: [
-      {
-        posterId: {
-          type: ObjectID,
-          ref: 'Poster',
-          required: true
-        },
-
-        quantity: {
-          type: Number,
-          required: true,
-          min: 1,
-          default: 1
-        }
-      }
-    ],
-    bill: {
-      type: Number,
-      required: true,
-      default: 0
-    }
-  },
-  {
-    timestamps: true
+app.get('/posters', async (req, res) => {
+  try {
+    const posters = await Poster.find();
+    res.status(200).json(posters);
+  } catch (err) {
+    res.status(404).json(err);
   }
-);
+});
 
-const Cart = mongoose.model('Cart', CartSchema);
+app.get('/posters/:id', async (req, res) => {
+  try {
+    if (!isValidObjectId(req.params.id)) {
+      return res.status(400).json({
+        success: false,
+        body: {
+          message: 'invalid id'
+        }
+      });
+    }
+
+    console.log(req.params.id);
+
+    const singlePoster = await Poster.findById(req.params.id);
+    console.log(singlePoster);
+
+    // If single poster was not found, return a 404 error
+    if (!singlePoster) {
+      return res.status(404).json({
+        success: false,
+        body: {
+          message: 'could not find poster'
+        }
+      });
+    }
+
+    res.status(200).json(singlePoster);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 app.get('/cartPosters', authenticateUser);
 app.get('/cartPosters', async (req, res) => {
