@@ -10,18 +10,15 @@ import { Poster, User, Cart } from './mongoose';
 const port = process.env.PORT || 8080;
 const app = express();
 
-// Add middlewares to enable cors and json body parsing
 app.use(cors());
 app.use(bodyParser.json());
 
-// Start defining your routes here
 app.get('/', (req, res) => {
   res.send('Hello Technigo!');
 });
 
 app.post('/register', async (req, res) => {
   const { username, password } = req.body;
-  console.log('heeej', username);
   const salt = bcrypt.genSaltSync();
   try {
     if (password.length < 8) {
@@ -159,19 +156,52 @@ app.get('/cart', authenticateUser, async (req, res) => {
 
 app.post('/cart', authenticateUser, async (req, res) => {
   try {
+    console.log(res, req);
     const cart = new Cart({
-      owner: res.locals.user._id,
-      poster: req.body
+      owner: res.locals.user._id
     });
     await cart.save();
     res.status(201).send(cart);
   } catch (error) {
     console.log({ error });
     res.status(400).send({ message: 'error' });
+    console.log(error);
   }
 });
 
-// Update Cart
+// // UPDATE CART
+
+app.patch('/cart', authenticateUser, async (req, res) => {
+  const { user } = res.locals;
+  const poster = req.body;
+  console.log('user', user, 'poster', poster);
+  console.log('body', req.body);
+
+  try {
+    const updatedCart = await Cart.findOneAndUpdate(
+      { user: user._id },
+      { poster },
+      { new: true }
+    );
+
+    if (updatedCart) {
+      res.status(200).json({
+        success: true,
+        response: updatedCart
+      });
+    } else {
+      res.status(404).json({
+        success: false,
+        response: 'Cart not found'
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      response: 'Error updating cart'
+    });
+  }
+});
 
 // Start the server
 app.listen(port, () => {

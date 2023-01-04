@@ -6,9 +6,11 @@ console.log(`connecting to ${mongoUrl}`);
 
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
+const ObjectID = mongoose.Schema.Types.ObjectId;
 
 const PosterSchema = new mongoose.Schema({
   poster: {
+    posterId: ObjectID,
     group: Number,
     title: String,
     color: String,
@@ -34,8 +36,6 @@ const UserSchema = new mongoose.Schema({
     default: () => crypto.randomBytes(128).toString('hex')
   }
 });
-
-const ObjectID = mongoose.Schema.Types.ObjectId;
 
 const CartSchema = new mongoose.Schema(
   {
