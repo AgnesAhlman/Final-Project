@@ -156,9 +156,10 @@ app.get('/cart', authenticateUser, async (req, res) => {
 
 app.post('/cart', authenticateUser, async (req, res) => {
   try {
-    console.log(res, req);
+    const items = req.body;
     const cart = new Cart({
-      owner: res.locals.user._id
+      owner: res.locals.user._id,
+      items
     });
     await cart.save();
     res.status(201).send(cart);
@@ -169,36 +170,36 @@ app.post('/cart', authenticateUser, async (req, res) => {
   }
 });
 
-// // UPDATE CART
-
+// UPDATE CART
 app.patch('/cart', authenticateUser, async (req, res) => {
   const { user } = res.locals;
-  const poster = req.body;
-  console.log('user', user, 'poster', poster);
-  console.log('body', req.body);
+  const items = req.body;
+  console.log('item', items);
 
   try {
     const updatedCart = await Cart.findOneAndUpdate(
-      { user: user._id },
-      { poster },
+      { owner: user._id },
+      { $set: { items } },
       { new: true }
     );
 
     if (updatedCart) {
+      // item was updated
       res.status(200).json({
         success: true,
-        response: updatedCart
+        res: updatedCart
       });
     } else {
       res.status(404).json({
         success: false,
-        response: 'Cart not found'
+        res: 'Cart not found'
       });
+      // }
     }
   } catch (error) {
     res.status(500).json({
       success: false,
-      response: 'Error updating cart'
+      res: 'Error updating or adding item to cart'
     });
   }
 });

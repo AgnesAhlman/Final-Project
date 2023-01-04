@@ -44,7 +44,7 @@ const CartSchema = new mongoose.Schema(
       required: true,
       ref: 'User'
     },
-    poster: [
+    items: [
       {
         posterId: {
           type: ObjectID,
