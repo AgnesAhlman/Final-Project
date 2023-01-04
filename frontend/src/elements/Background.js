@@ -1,19 +1,5 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  min-height: 100vh;
-
-  background-color: var(--main-bg-color);
-  padding: 3rem;
-`;
-
-export const AllPosterWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--main-bg-color);
-`;
-
 export const Background = styled.div`
   display: flex;
   background-color: white;

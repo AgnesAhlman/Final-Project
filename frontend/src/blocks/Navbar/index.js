@@ -1,5 +1,3 @@
-/* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable no-confusing-arrow */
 import styled from 'styled-components';
 
 import Icon from './Icon';
@@ -16,8 +14,9 @@ const Navbar = styled.div`
   padding: 1rem;
   width: calc(100% - 2rem);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  box-shadow: ${(props) =>
-    props.shadow ? 'rgba(0, 0, 0, 0.11) 0px 3px 8px;' : 'none'};
+  box-shadow: ${(props) => {
+    return props.shadow ? 'rgba(0, 0, 0, 0.11) 0px 3px 8px;' : 'none';
+  }};
 `;
 
 Navbar.Icon = Icon;
