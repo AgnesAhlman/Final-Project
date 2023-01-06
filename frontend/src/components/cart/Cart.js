@@ -9,10 +9,7 @@ const Cart = () => {
   const cartItems = useSelector((store) => store.cartRed.items);
 
   const totalPrice = useMemo(() => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   }, [cartItems]);
 
   const totalCartItems = useMemo(() => {
