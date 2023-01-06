@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import Navbar from '../Navbar';
+
 import { getSinglePosters } from '../../reducers/products';
 import Poster from '../Poster';
-
-// import { useDispatch } from 'react-redux';
-// import { getSinglePosters } from '../../reducers/products';
 
 const SinglePosterPage = () => {
   const dispatch = useDispatch();
@@ -23,6 +22,7 @@ const SinglePosterPage = () => {
 
   return (
     <div>
+      <Navbar shadow />
       <Poster product={product} />
     </div>
   );

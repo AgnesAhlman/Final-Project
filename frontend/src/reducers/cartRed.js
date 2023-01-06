@@ -20,13 +20,6 @@ const cartRed = createSlice({
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
-      // fetch('http://localhost:8080/cartPosters', {
-      //   method: 'POST',
-      //   body: JSON.stringify(action.payload),
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   }
-      // });
     },
 
     removeItem: (state, action) => {
