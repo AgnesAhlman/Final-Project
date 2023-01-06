@@ -171,6 +171,11 @@ app.post('/cart', authenticateUser, async (req, res) => {
 });
 
 // UPDATE CART
+// This route handles patch requests to the '/cart'endpoint
+// and updates the items in the cart for the authenticated user.
+// It uses the findOneAndUpdate method to update the 'items' field in the Cart model
+// for the owner specified in the request.
+
 app.patch('/cart', authenticateUser, async (req, res) => {
   const { user } = res.locals;
   const items = req.body;
