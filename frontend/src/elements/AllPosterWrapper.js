@@ -5,4 +5,5 @@ export const AllPosterWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: var(--main-bg-color);
+  min-height: 100vh;
 `;
