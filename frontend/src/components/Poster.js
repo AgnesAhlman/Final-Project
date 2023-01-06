@@ -16,9 +16,10 @@ const Poster = (props) => {
       <Links to={`/posters/${props.product._id}`}>
         <article>
           <PosterContent.Image src={props.product.img} alt="" />
-          <span> {props.product.title}</span>
-          <p>fr. {props.product.price} kr</p>
+          <PosterContent.RoomImg src={props.product.roomImg} alt="" />
         </article>
+        <span> {props.product.title}</span>
+        <p>fr. {props.product.price} kr</p>
       </Links>
 
       <button
