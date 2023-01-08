@@ -7,27 +7,8 @@
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/body.jpg",
     "price": 500,
-    "size": "small"
-  },
-  {
-    "_id": "63ad791caf35b05813892256",
-    "group": 1,
-    "title": "Body Black&White",
-    "color": "grey",
-    "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/bodyBW.jpg",
-    "price": 500,
-    "size": "small"
-  },
-  {
-    "_id": "63ad791caf35b05813892257",
-    "group": 1,
-    "title": "Body",
-    "color": "blue",
-    "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/bodyblue.jpg",
-    "price": 500,
-    "size": "small"
+    "size": "small",
+    "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8386.jpg"
   },
   {
     "_id": "63ad791caf35b05813892258",
@@ -37,7 +18,8 @@
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/flower.jpg",
     "price": 500,
-    "size": "small"
+    "size": "small",
+    "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8391.jpg"
   },
   {
     "_id": "63ad791caf35b05813892259",
@@ -47,16 +29,7 @@
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/flowerbeige.jpg",
     "price": 500,
-    "size": "small"
-  },
-  {
-    "_id": "63ad791caf35b0581389225a",
-    "group": 2,
-    "title": "Flower",
-    "color": "blue",
-    "description": "test",
-    "img": "https://storage.googleapis.com/final-project-posters/flowerblue.jpg",
-    "price": 500,
-    "size": "small"
+    "size": "small",
+    "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8396.jpg"
   }
 ]

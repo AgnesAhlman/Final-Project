@@ -1,13 +1,13 @@
 import { Poster } from '../mongoose';
 
-import posters from '../data/posters.json';
+import posters from '../data/database_posters.json';
 
-const resetDataBase = async () => {
-  await Poster.deleteMany();
+const updatePosters = async () => {
+  // await Poster.deleteMany();
   posters.forEach((poster) => {
     const newPoster = new Poster(poster);
     newPoster.save();
   });
 };
 
-resetDataBase();
+updatePosters();
