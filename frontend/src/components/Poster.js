@@ -1,11 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import cartRed from '../reducers/cartRed';
+// import { useDispatch } from 'react-redux';
+// import cartRed from '../reducers/cartRed';
 import PosterContent from '../blocks/PosterContent';
 import Links from '../elements/Links';
 
 const Poster = (props) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   if (!props.product) {
     return null;
@@ -22,12 +22,12 @@ const Poster = (props) => {
         <p>fr. {props.product.price} kr</p>
       </Links>
 
-      <button
+      {/* <button
         type="button"
         onClick={() => dispatch(cartRed.actions.addItem(props.product))}
       >
         Add to cart
-      </button>
+      </button> */}
     </PosterContent>
   );
 };
