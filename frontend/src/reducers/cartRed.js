@@ -10,6 +10,9 @@ const cartRed = createSlice({
     items: initialItems
   },
   reducers: {
+    setItems: (state, action) => {
+      state.items = action.payload;
+    },
     addItem: (state, action) => {
       console.log(action);
       const existingProduct = state.items.find(

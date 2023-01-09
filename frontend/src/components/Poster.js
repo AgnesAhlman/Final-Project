@@ -21,15 +21,28 @@ const Poster = (props) => {
         <span> {props.product.title}</span>
         <p>fr. {props.product.price} kr</p>
       </Links>
-
-      {/* <button
-        type="button"
-        onClick={() => dispatch(cartRed.actions.addItem(props.product))}
-      >
-        Add to cart
-      </button> */}
     </PosterContent>
   );
 };
 
 export default Poster;
+
+/* <a
+href={item.github}
+alt="project landingpage"
+target="_blank"
+rel="noopener noreferrer">
+<FontAwesomeIcon
+  icon={faGithub}
+  size="3x"
+  color="#212427" />
+</a>
+
+<a
+href={item.netlify}
+alt="project landingpage"
+target="_blank"
+rel="noopener noreferrer">
+<CardOverlay />
+<img src={item.image} alt="project poster" />
+</a> */
