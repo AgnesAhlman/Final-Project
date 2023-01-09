@@ -4,15 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { AllPosterWrapper } from 'elements/AllPosterWrapper';
 import { Background } from 'elements/Background';
-
 import { Carousel } from 'react-responsive-carousel';
 import { Cell, Layout } from 'blocks/Layout';
 import ProductDetails from 'blocks/ProductDetails';
 import cartRed from 'reducers/cartRed';
 import Navbar from '../Navbar';
-
 import { getSinglePosters } from '../../reducers/products';
-// import Poster from '../Poster';
 
 const SinglePosterPage = () => {
   const dispatch = useDispatch();
@@ -36,7 +33,6 @@ const SinglePosterPage = () => {
     <AllPosterWrapper>
       <Navbar shadow />
       <Background>
-        {/* <Poster product={product} /> */}
         <Layout>
           <Cell>
             <Carousel thumbWidth={60}>

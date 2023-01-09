@@ -23,3 +23,5 @@ export const fetchPostersById = async (id) => {
     return console.error(error);
   }
 };
+
+export const API_URL = (slug) => `${BASE_URL}/${slug}`;
