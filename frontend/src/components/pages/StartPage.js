@@ -6,14 +6,16 @@ import Navbar from '../Navbar';
 
 const StartPage = () => {
   return (
-    <Wrapper>
-      <Header>
-        <Navbar primary />
-        <Header.LogoContainer>
-          <img src="logo.png" alt="logo" />
-        </Header.LogoContainer>
-      </Header>
-    </Wrapper>
+    <>
+      <Navbar shadow />
+      <Wrapper>
+        <Header>
+          <Header.LogoContainer>
+            <img src="logo.png" alt="logo" />
+          </Header.LogoContainer>
+        </Header>
+      </Wrapper>
+    </>
   );
 };
 

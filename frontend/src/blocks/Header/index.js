@@ -6,8 +6,8 @@ const Header = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-end;
-  min-height: 90vh;
-  background-image: url('headerImage.jpg');
+  min-height: 100vh;
+  background-image: url('heroImg.jpg');
   background-size: cover;
   width: 100%;
 `;

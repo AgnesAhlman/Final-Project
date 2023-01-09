@@ -12,7 +12,7 @@ const AllPostersPage = () => {
     <>
       <Navbar shadow />
       <AllPosterWrapper>
-        <Background>
+        <Background column>
           <h1>POSTERS</h1>
           <Grid>
             <Posters />
