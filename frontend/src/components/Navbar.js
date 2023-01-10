@@ -7,6 +7,7 @@ const Navbar = (props) => {
     <StyledNavbar shadow={props.shadow} primary={props.primary}>
       <Links to="/">Home</Links>
       <Links to="/posters">Posters</Links>
+      <Links to="/login">Login</Links>
       <Links to="/checkout">
         <StyledNavbar.Icon src="/cartIcon.svg" alt="cartIcon" />
       </Links>

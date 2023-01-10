@@ -7,7 +7,7 @@ import { Background } from 'elements/Background';
 import { Carousel } from 'react-responsive-carousel';
 import { Cell, Layout } from 'blocks/Layout';
 import ProductDetails from 'blocks/ProductDetails';
-import cart from 'reducers/cart';
+import { addToCart } from 'reducers/cart';
 import Navbar from '../Navbar';
 import { getSinglePosters } from '../../reducers/products';
 
@@ -52,7 +52,7 @@ const SinglePosterPage = () => {
               <p>poster info text goes here</p>
               <ProductDetails.Button
                 type="button"
-                onClick={() => dispatch(cart.actions.addItem(product))}
+                onClick={() => dispatch(addToCart(product))}
               >
                 <img src="/cartIcon.svg" alt="cartIcon" />
                 Add to cart

@@ -24,7 +24,7 @@ app.post('/register', async (req, res) => {
     if (password.length < 8) {
       res.status(400).json({
         success: false,
-        response: 'Password must be at least 8 characters long'
+        message: 'Password must be at least 8 characters long'
       });
     } else {
       const newUser = await new User({
@@ -52,7 +52,7 @@ app.post('/register', async (req, res) => {
       console.warn(error.name, error.code);
       res.status(500).json({
         success: false,
-        response: 'Unexpected Error...'
+        message: 'Unexpected Error...'
       });
     }
   }
@@ -75,13 +75,13 @@ app.post('/login', async (req, res) => {
     } else {
       res.status(400).json({
         success: false,
-        response: "Credentials didn't match"
+        message: "Credentials didn't match"
       });
     }
   } catch (error) {
     res.status(500).json({
       success: false,
-      response: error
+      message: error.message
     });
   }
 });
@@ -96,13 +96,13 @@ const authenticateUser = async (req, res, next) => {
       next();
     } else {
       res.status(401).json({
-        response: 'Please log in',
+        message: 'Please log in',
         success: false
       });
     }
   } catch (error) {
     res.status(500).json({
-      response: ' Could not authenticate the user...',
+      message: 'Could not authenticate the user...',
       success: false
     });
   }
@@ -111,7 +111,10 @@ const authenticateUser = async (req, res, next) => {
 app.get('/posters', async (req, res) => {
   try {
     const posters = await Poster.find();
-    res.status(200).json(posters);
+    res.status(200).json({
+      success: true,
+      response: posters
+    });
   } catch (err) {
     res.status(404).json(err);
   }
@@ -122,9 +125,7 @@ app.get('/posters/:id', async (req, res) => {
     if (!isValidObjectId(req.params.id)) {
       return res.status(400).json({
         success: false,
-        body: {
-          message: 'invalid id'
-        }
+        message: 'Invalid id'
       });
     }
 
@@ -137,13 +138,14 @@ app.get('/posters/:id', async (req, res) => {
     if (!singlePoster) {
       return res.status(404).json({
         success: false,
-        body: {
-          message: 'could not find poster'
-        }
+        message: 'Could not find poster'
       });
     }
 
-    res.status(200).json(singlePoster);
+    res.status(200).json({
+      success: true,
+      response: singlePoster
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -164,16 +166,21 @@ app.get('/cart', authenticateUser, async (req, res) => {
 
 app.post('/cart', authenticateUser, async (req, res) => {
   try {
-    const items = req.body;
+    const { items } = req.body;
+
+    console.log('items', items);
     const cart = new Cart({
       owner: res.locals.user._id,
       items
     });
     await cart.save();
-    res.status(201).json(cart);
+    res.status(201).json({
+      success: true,
+      response: cart
+    });
   } catch (error) {
     console.log({ error });
-    res.status(400).json({ message: 'error' });
+    res.status(500).json({ success: false, message: error.message });
     console.log(error);
   }
 });
@@ -185,13 +192,12 @@ app.post('/cart', authenticateUser, async (req, res) => {
 // for the owner specified in the request.
 
 app.patch('/cart', authenticateUser, async (req, res) => {
-  const { user } = res.locals;
-  const items = req.body;
-  console.log('item', items);
+  const { cartId, items } = req.body;
+  console.log('items', items, 'cartId', cartId);
 
   try {
     const updatedCart = await Cart.findOneAndUpdate(
-      { owner: user._id },
+      { _id: cartId },
       { $set: { items } },
       { new: true }
     );
@@ -205,13 +211,13 @@ app.patch('/cart', authenticateUser, async (req, res) => {
     } else {
       res.status(404).json({
         success: false,
-        res: 'Cart not found'
+        message: 'Cart not found'
       });
     }
   } catch (error) {
     res.status(500).json({
       success: false,
-      res: 'Error updating or adding item to cart'
+      message: 'Error updating or adding item to cart'
     });
   }
 });
