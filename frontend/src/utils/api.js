@@ -4,6 +4,12 @@
  */
 const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
+// Singleton
+let accessToken = null;
+export const setAccessToken = (token) => {
+  accessToken = token;
+};
+
 export const fetchPosters = async () => {
   try {
     const res = await fetch(`${BASE_URL}/posters`);
@@ -20,8 +26,88 @@ export const fetchPostersById = async (id) => {
     const data = await res.json();
     return data;
   } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
+// Login
+export const login = async (mode, username, password) => {
+  try {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username,
+        password
+      })
+    };
+    const res = await fetch(`${BASE_URL}/${mode}`, options);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
+// Fetch Cart
+export const fetchCart = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}/cart`, {
+      headers: {
+        Authorization: accessToken
+      }
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
     return console.error(error);
   }
 };
 
-export const API_URL = (slug) => `${BASE_URL}/${slug}`;
+// Save Cart
+export const createCart = async (posterId, quantity) => {
+  try {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        posterId,
+        quantity
+      })
+    };
+    const res = await fetch(`${BASE_URL}/cart`, options);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
+// Update cart
+export const updateCart = async (cartId, items) => {
+  try {
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        cartId,
+        items
+      })
+    };
+    const res = await fetch(`${BASE_URL}/cart`, options);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};

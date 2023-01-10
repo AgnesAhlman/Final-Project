@@ -7,7 +7,7 @@ import Navbar from '../Navbar';
 import Posters from '../Posters';
 
 const AllPostersPage = () => {
-  // const products = useSelector((store) => store.cartRed.items);
+  // const products = useSelector((store) => store.cart.items);
   return (
     <>
       <Navbar shadow />

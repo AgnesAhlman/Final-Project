@@ -8,14 +8,14 @@ import user from 'reducers/user';
 import AllPosterPage from './components/pages/AllPostersPage';
 import StartPage from './components/pages/StartPage';
 
-import cartRed from './reducers/cartRed';
+import cart from './reducers/cart';
 import products from './reducers/products';
 import CheckoutPage from './components/pages/CheckoutPage';
 import SinglePosterPage from './components/pages/SinglePosterPage';
 import LogIn from './components/pages/LogIn';
 
 const reducer = combineReducers({
-  cartRed: cartRed.reducer,
+  cart: cart.reducer,
   products: products.reducer,
   user: user.reducer
 });
@@ -24,7 +24,7 @@ const store = configureStore({ reducer });
 
 // Stores the data even though the page is refreshed
 store.subscribe(() =>
-  localStorage.setItem('cart', JSON.stringify(store.getState().cartRed.items))
+  localStorage.setItem('cart', JSON.stringify(store.getState().cart.items))
 );
 
 export const App = () => {

@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { API_URL } from 'utils/api';
+import { login, setAccessToken } from 'utils/api';
+import { getCart } from './cart';
 
 const user = createSlice({
   name: 'user',
@@ -19,22 +20,13 @@ const user = createSlice({
 
 export const logIn = (mode, username, password) => {
   return async (dispatch) => {
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username,
-        password
-      })
-    };
-    const response = await fetch(API_URL(mode), options);
-    const data = await response.json();
+    const data = await login(mode, username, password);
 
     if (data.success) {
       dispatch(user.actions.setError(null));
       dispatch(user.actions.setUser(data.response));
+      setAccessToken(data.response.accessToken);
+      dispatch(getCart());
     } else {
       dispatch(user.actions.setUser(null));
       dispatch(user.actions.setError(data.response));

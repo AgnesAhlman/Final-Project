@@ -1,6 +1,6 @@
 import React from 'react';
 // import { useDispatch } from 'react-redux';
-// import cartRed from '../reducers/cartRed';
+// import cart from '../reducers/cart';
 import PosterContent from '../blocks/PosterContent';
 import Links from '../elements/Links';
 
