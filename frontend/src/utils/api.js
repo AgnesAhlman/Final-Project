@@ -74,7 +74,7 @@ export const createCart = async (posterId, quantity) => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        Authorization: accessToken
       },
       body: JSON.stringify({
         posterId,
@@ -96,7 +96,7 @@ export const updateCart = async (cartId, items) => {
     const options = {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json'
+        Authorization: accessToken
       },
       body: JSON.stringify({
         cartId,

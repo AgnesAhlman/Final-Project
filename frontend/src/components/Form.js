@@ -8,12 +8,12 @@ const Form = (props) => {
   const dispatch = useDispatch();
 
   const errorMessage = useSelector((store) => store.user.error);
-  console.log(errorMessage);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     dispatch(logIn(props.mode, username, password));
   };
+
   return (
     <form onSubmit={onFormSubmit}>
       <label htmlFor="username">

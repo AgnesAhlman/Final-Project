@@ -22,11 +22,6 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer });
 
-// Stores the data even though the page is refreshed
-store.subscribe(() =>
-  localStorage.setItem('cart', JSON.stringify(store.getState().cart.items))
-);
-
 export const App = () => {
   return (
     <Provider store={store}>

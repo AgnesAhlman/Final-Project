@@ -149,8 +149,16 @@ app.get('/posters/:id', async (req, res) => {
   }
 });
 
+// TODO get the users cart
 app.get('/cart', authenticateUser, async (req, res) => {
-  const cart = await Cart.find({});
+  const cart = await Cart.findOne({ owner: res.locals.user._id });
+
+  console.log(cart);
+
+  if (!cart) {
+    return res.status(404).json({ message: 'Cart not found', success: false });
+  }
+
   res.status(200).json({ success: true, response: cart });
 });
 
@@ -162,10 +170,10 @@ app.post('/cart', authenticateUser, async (req, res) => {
       items
     });
     await cart.save();
-    res.status(201).send(cart);
+    res.status(201).json(cart);
   } catch (error) {
     console.log({ error });
-    res.status(400).send({ message: 'error' });
+    res.status(400).json({ message: 'error' });
     console.log(error);
   }
 });
@@ -199,7 +207,6 @@ app.patch('/cart', authenticateUser, async (req, res) => {
         success: false,
         res: 'Cart not found'
       });
-      // }
     }
   } catch (error) {
     res.status(500).json({

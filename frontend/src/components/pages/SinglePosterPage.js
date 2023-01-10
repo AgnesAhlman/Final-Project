@@ -26,6 +26,7 @@ const SinglePosterPage = () => {
   }, [dispatch, id, product]);
 
   if (!product) {
+    // TODO loading state
     return null;
   }
 
