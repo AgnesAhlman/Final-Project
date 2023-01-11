@@ -54,8 +54,8 @@ const SinglePosterPage = () => {
                 type="button"
                 onClick={() => dispatch(addToCart(product))}
               >
-                <img src="/cartIcon.svg" alt="cartIcon" />
                 Add to cart
+                <img src="/cartIcon.svg" alt="cartIcon" />
               </ProductDetails.Button>
             </ProductDetails>
           </Cell>

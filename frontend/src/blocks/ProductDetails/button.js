@@ -9,6 +9,13 @@ const Button = styled.button`
   align-items: center;
   text-align: center;
   justify-content: center;
+  padding: 0.5rem;
+  gap: 1rem;
+
+  img {
+    filter: invert(1);
+    max-width: 2rem;
+  }
 `;
 
 export default Button;
