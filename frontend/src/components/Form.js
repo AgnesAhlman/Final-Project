@@ -1,5 +1,6 @@
+import LoginRegister from 'blocks/LoginRegister';
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logIn } from 'reducers/user';
 
 const Form = (props) => {
@@ -7,15 +8,13 @@ const Form = (props) => {
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
 
-  const errorMessage = useSelector((store) => store.user.error);
-
   const onFormSubmit = (event) => {
     event.preventDefault();
     dispatch(logIn(props.mode, username, password));
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <LoginRegister.Form onSubmit={onFormSubmit}>
       <label htmlFor="username">
         <input
           type="text"
@@ -34,9 +33,10 @@ const Form = (props) => {
           placeholder="Password"
         />
       </label>
-      <button type="submit">Log in</button>
-      <p>{errorMessage && errorMessage}</p>
-    </form>
+      <button type="submit">
+        {props.mode === 'login' ? 'Login' : 'Register'}
+      </button>
+    </LoginRegister.Form>
   );
 };
 
