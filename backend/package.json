@@ -5,7 +5,8 @@
   "scripts": {
     "start": "babel-node server.js",
     "dev": "nodemon server.js --exec babel-node",
-    "getPosters": "babel-node scripts/getPosters.js"
+    "getPosters": "babel-node scripts/getPosters.js",
+    "updatePosters": "babel-node scripts/updatePosters.js"
   },
   "author": "",
   "license": "ISC",
