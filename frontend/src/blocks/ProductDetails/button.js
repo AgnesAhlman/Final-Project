@@ -11,6 +11,12 @@ const Button = styled.button`
   justify-content: center;
   padding: 0.5rem;
   gap: 1rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--main-bg-color);
+  }
 
   img {
     filter: invert(1);
