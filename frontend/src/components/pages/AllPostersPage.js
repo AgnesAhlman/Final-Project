@@ -11,7 +11,7 @@ const AllPostersPage = () => {
     <>
       <Navbar shadow />
       <AllPosterWrapper>
-        <Background column>
+        <Background column big>
           <h1>POSTERS</h1>
           <Grid>
             <Posters />
