@@ -1,42 +1,63 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as api from '../utils/api';
 
-const initialItems = localStorage.getItem('cart')
-  ? JSON.parse(localStorage.getItem('cart'))
-  : [];
+// const initialItems = localStorage.getItem('cart')
+//   ? JSON.parse(localStorage.getItem('cart'))
+//   : [];
 
 const cart = createSlice({
   name: 'cart',
   initialState: {
     error: null,
-    items: initialItems
+    isFetching: false,
+    userHasCart: false,
+    cartId: null,
+    items: []
   },
   reducers: {
     setItems: (state, action) => {
-      state.items = action.payload;
+      const newItems = action.payload.reduce((acc, item) => {
+        const existingProduct = acc.find((i) => i.posterId === item.posterId);
+        if (existingProduct) {
+          existingProduct.quantity += item.quantity;
+          return acc;
+        }
+        return acc.concat(item);
+      }, state.items);
+
+      state.items = newItems;
+    },
+    setCartId: (state, action) => {
+      state.cartId = action.payload;
     },
     setError: (state, action) => {
       state.error = action.payload;
     },
+    setUserHasCart: (state, action) => {
+      state.userHasCart = action.payload;
+    },
+    setIsFetching: (state, action) => {
+      state.isFetching = action.payload;
+    },
     addItem: (state, action) => {
-      console.log(action);
       const existingProduct = state.items.find(
-        (items) => items._id === action.payload._id
+        (items) => items.posterId === action.payload._id
       );
+
       if (existingProduct) {
         existingProduct.quantity += 1;
       } else {
-        state.items.push({ ...action.payload, quantity: 1 });
+        state.items.push({ posterId: action.payload._id, quantity: 1 });
       }
     },
     removeItem: (state, action) => {
       const existingProduct = state.items.find(
-        (items) => items._id === action.payload._id
+        (items) => items.posterId === action.payload._id
       );
 
       if (existingProduct && existingProduct.quantity === 1) {
         state.items = state.items.filter(
-          (item) => item._id !== action.payload._id
+          (item) => item.posterId !== action.payload._id
         );
       } else if (existingProduct) {
         existingProduct.quantity -= 1;
@@ -45,49 +66,68 @@ const cart = createSlice({
   }
 });
 
+export const syncCart = () => {
+  return async (dispatch, getState) => {
+    const state = getState();
+    console.log('sync cart...', state);
+    if (state.user.isLoggedIn && state.cart.items) {
+      console.log('User is logged in and items exists...');
+
+      if (state.cart.cartId) {
+        // Update Cart
+        console.log('Cart id was found, updating cart...');
+        const data = await api.updateCart(state.cart.cartId, state.cart.items);
+
+        if (!data.success) {
+          dispatch(cart.actions.setError(data.message));
+        }
+      } else {
+        // Create Cart
+        console.log('CartId was not found, creating cart...');
+        const data = await api.createCart(state.cart.items);
+
+        if (data.success) {
+          dispatch(cart.actions.setCartId(data.response._id));
+        } else {
+          dispatch(cart.actions.setError(data.message));
+        }
+      }
+    } else {
+      console.log('Cannot sync cart, user is NOT logged in...');
+    }
+  };
+};
+
 export const getCart = () => {
   return async (dispatch) => {
-    console.log('getting cart...');
+    dispatch(cart.actions.setIsFetching(true));
     const data = await api.fetchCart();
 
     if (data.success) {
       dispatch(cart.actions.setError(null));
-      dispatch(cart.actions.setItems(data.response));
+      dispatch(cart.actions.setItems(data.response.items));
+      dispatch(cart.actions.setUserHasCart(true));
+      dispatch(cart.actions.setCartId(data.response._id));
+      dispatch(syncCart());
     } else {
-      console.log(data);
-      dispatch(cart.actions.setError(data));
-      dispatch(cart.actions.setItems([]));
+      dispatch(cart.actions.setError(data.message));
     }
+
+    dispatch(cart.actions.setIsFetching(false));
   };
 };
 
-export const createCart = () => {
+export const addToCart = (product) => {
   return async (dispatch) => {
-    const data = await api.createCart();
-
-    if (data.success) {
-      dispatch(cart.actions.setError(null));
-      dispatch(cart.actions.setItems(data.response));
-    } else {
-      dispatch(cart.actions.setUser(null));
-      dispatch(cart.actions.setItems([]));
-      console.log(data.response);
-    }
+    dispatch(cart.actions.addItem(product));
+    dispatch(syncCart());
   };
 };
 
-export const updateCart = () => {
+export const removeFromCart = (product) => {
   return async (dispatch) => {
-    const data = await api.updateCart();
-
-    if (data.success) {
-      dispatch(cart.actions.setError(null));
-      dispatch(cart.actions.setItems(data.response));
-    } else {
-      dispatch(cart.actions.setUser(null));
-      dispatch(cart.actions.setItems([]));
-      console.log(data.response);
-    }
+    dispatch(cart.actions.removeItem(product));
+    dispatch(syncCart());
   };
 };
 

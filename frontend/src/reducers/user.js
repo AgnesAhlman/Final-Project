@@ -6,7 +6,8 @@ const user = createSlice({
   name: 'user',
   initialState: {
     error: null,
-    user: null
+    user: null,
+    isLoggedIn: false
   },
   reducers: {
     setError: (store, action) => {
@@ -14,6 +15,7 @@ const user = createSlice({
     },
     setUser: (store, action) => {
       store.user = action.payload;
+      store.isLoggedIn = !!action.payload;
     }
   }
 });
@@ -29,8 +31,7 @@ export const logIn = (mode, username, password) => {
       dispatch(getCart());
     } else {
       dispatch(user.actions.setUser(null));
-      dispatch(user.actions.setError(data.response));
-      console.log(data.response);
+      dispatch(user.actions.setError(data.message));
     }
   };
 };

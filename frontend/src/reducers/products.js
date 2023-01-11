@@ -12,6 +12,9 @@ const products = createSlice({
     setItems: (store, action) => {
       store.items = action.payload;
     },
+    setError: (store, action) => {
+      store.error = action.payload;
+    },
     setSingleItem: (store, action) => {
       const existingIdIndex = store.items.findIndex(
         (item) => item._id === action.payload._id
@@ -26,18 +29,26 @@ const products = createSlice({
 });
 
 export const getPosters = () => {
-  return (dispatch) => {
-    fetchPosters().then((data) => {
-      dispatch(products.actions.setItems(data));
-    });
+  return async (dispatch) => {
+    const data = await fetchPosters();
+
+    if (data.success) {
+      dispatch(products.actions.setItems(data.response));
+    } else {
+      dispatch(products.actions.setError(data.message));
+    }
   };
 };
 
 export const getSinglePosters = (id) => {
-  return (dispatch) => {
-    fetchPostersById(id).then((data) => {
-      dispatch(products.actions.setSingleItem(data));
-    });
+  return async (dispatch) => {
+    const data = await fetchPostersById(id);
+
+    if (data.success) {
+      dispatch(products.actions.setSingleItem(data.response));
+    } else {
+      dispatch(products.actions.setError(data.message));
+    }
   };
 };
 

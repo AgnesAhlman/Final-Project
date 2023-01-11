@@ -16,7 +16,8 @@ export const fetchPosters = async () => {
     const data = await res.json();
     return data;
   } catch (error) {
-    return console.error(error);
+    console.error(error);
+    return error;
   }
 };
 
@@ -58,7 +59,8 @@ export const fetchCart = async () => {
   try {
     const res = await fetch(`${BASE_URL}/cart`, {
       headers: {
-        Authorization: accessToken
+        Authorization: accessToken,
+        'Content-Type': 'application/json'
       }
     });
     const data = await res.json();
@@ -69,16 +71,16 @@ export const fetchCart = async () => {
 };
 
 // Save Cart
-export const createCart = async (posterId, quantity) => {
+export const createCart = async (items) => {
   try {
     const options = {
       method: 'POST',
       headers: {
+        Authorization: accessToken,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        posterId,
-        quantity
+        items
       })
     };
     const res = await fetch(`${BASE_URL}/cart`, options);
@@ -96,6 +98,7 @@ export const updateCart = async (cartId, items) => {
     const options = {
       method: 'PATCH',
       headers: {
+        Authorization: accessToken,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -103,6 +106,7 @@ export const updateCart = async (cartId, items) => {
         items
       })
     };
+
     const res = await fetch(`${BASE_URL}/cart`, options);
     const data = await res.json();
     return data;
