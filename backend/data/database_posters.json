@@ -6,8 +6,8 @@
     "color": "beige",
     "description": "My description",
     "img": "https://storage.googleapis.com/final-project-posters/body.jpg",
-    "price": 300,
-    "size": "small",
+    "price": 500,
+    "size": "70x100",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8386.jpg"
   },
   {
@@ -18,7 +18,7 @@
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/flower.jpg",
     "price": 400,
-    "size": "small",
+    "size": "70x100",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8391.jpg"
   },
   {
@@ -29,7 +29,51 @@
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/flowerbeige.jpg",
     "price": 200,
-    "size": "small",
+    "size": "70x100",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8396.jpg"
+  },
+  {
+    "_id": "63ad791caf35b05813892260",
+    "group": 2,
+    "title": "Cat",
+    "color": "Yellow",
+    "description": "test",
+    "img": "https://storage.googleapis.com/final-project-posters/cat.jpg",
+    "price": 200,
+    "size": "70x100",
+    "roomImg": "https://storage.googleapis.com/final-project-posters/roomPosters/IMG_8380.jpg"
+  },
+  {
+    "_id": "63ad791caf35b05813892261",
+    "group": 2,
+    "title": "Bird",
+    "color": "Yellow",
+    "description": "test",
+    "img": "https://storage.googleapis.com/final-project-posters/bird.jpg",
+    "price": 200,
+    "size": "70x100",
+    "roomImg": "https://storage.googleapis.com/final-project-posters/roomPosters/IMG_8372.jpg"
+  },
+  {
+    "_id": "63ad791caf35b05813892262",
+    "group": 2,
+    "title": "Face",
+    "color": "Purple",
+    "description": "test",
+    "img": "https://storage.googleapis.com/final-project-posters/face.jpg",
+    "price": 200,
+    "size": "70x100",
+    "roomImg": "https://storage.googleapis.com/final-project-posters/roomPosters/IMG_8375.jpg"
+  },
+  {
+    "_id": "63ad791caf35b05813892263",
+    "group": 2,
+    "title": "Stevie Wonder",
+    "color": "Purple",
+    "description": "test",
+    "img": "https://storage.googleapis.com/final-project-posters/stevie.jpg",
+    "price": 200,
+    "size": "70x100",
+    "roomImg": "https://storage.googleapis.com/final-project-posters/roomPosters/IMG_8377.jpg"
   }
 ]

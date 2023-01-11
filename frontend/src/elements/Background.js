@@ -8,7 +8,7 @@ export const Background = styled.div`
   align-items: center;
   /* padding: 0rem 10rem 0rem 10rem; */
   background-color: white;
-  max-width: 60rem;
+  width: ${(props) => (props.big ? '80rem' : '60rem')};
 
   h1 {
     padding: 5rem;
