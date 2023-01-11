@@ -9,15 +9,37 @@ mongoose.Promise = Promise;
 const ObjectID = mongoose.Schema.Types.ObjectId;
 
 const PosterSchema = new mongoose.Schema({
-  poster: {
-    posterId: ObjectID,
-    group: Number,
-    title: String,
-    color: String,
-    description: String,
-    img: String,
-    price: Number,
-    size: String
+  group: {
+    type: Number,
+    required: true
+  },
+  title: {
+    type: String,
+    required: true
+  },
+  color: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  img: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  size: {
+    type: String,
+    required: true
+  },
+  roomImg: {
+    type: String,
+    required: true
   }
 });
 

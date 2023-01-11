@@ -4,9 +4,9 @@
     "group": 1,
     "title": "body",
     "color": "beige",
-    "description": "test",
+    "description": "My description",
     "img": "https://storage.googleapis.com/final-project-posters/body.jpg",
-    "price": 500,
+    "price": 300,
     "size": "small",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8386.jpg"
   },
@@ -17,7 +17,7 @@
     "color": "beige",
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/flower.jpg",
-    "price": 500,
+    "price": 400,
     "size": "small",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8391.jpg"
   },
@@ -28,7 +28,7 @@
     "color": "beige",
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/flowerbeige.jpg",
-    "price": 500,
+    "price": 200,
     "size": "small",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8396.jpg"
   }
