@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Links = styled(Link)`
   text-decoration: none;
+
   color: black;
 `;
 

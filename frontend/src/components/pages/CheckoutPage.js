@@ -5,7 +5,7 @@ import Navbar from '../Navbar';
 
 const CheckoutPage = () => {
   return (
-    <AllPosterWrapper>
+    <AllPosterWrapper center>
       <Navbar shadow />
       <div>CheckoutPage</div>
       <Cart />

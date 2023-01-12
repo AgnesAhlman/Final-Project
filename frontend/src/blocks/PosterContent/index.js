@@ -6,6 +6,7 @@ import RoomImg from './RoomImg';
 const PosterContent = styled.div`
   display: flex;
   flex-direction: column;
+
   align-items: center;
   padding: 2rem;
 

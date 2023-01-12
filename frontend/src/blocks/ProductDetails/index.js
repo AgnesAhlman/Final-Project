@@ -3,6 +3,7 @@ import Button from './button';
 
 const ProductDetails = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 `;

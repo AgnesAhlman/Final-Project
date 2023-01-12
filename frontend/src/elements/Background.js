@@ -6,7 +6,7 @@ export const Background = styled.div`
   margin-top: 10rem;
   flex-direction: ${(props) => (props.column ? 'column' : 'row')};
   align-items: center;
-  /* padding: 0rem 10rem 0rem 10rem; */
+
   background-color: white;
   width: ${(props) => (props.big ? '80rem' : '60rem')};
 
