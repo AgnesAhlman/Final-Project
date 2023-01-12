@@ -31,7 +31,7 @@ const SinglePosterPage = () => {
   }
 
   return (
-    <AllPosterWrapper>
+    <AllPosterWrapper center>
       <Navbar shadow />
       <Background>
         <Layout>

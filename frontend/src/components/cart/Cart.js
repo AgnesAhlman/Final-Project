@@ -54,7 +54,7 @@ const Cart = () => {
   return (
     <div>
       <p>Total price:·{totalPrice}:-</p>
-      <p>Total items:·{totalCartItems}</p>
+      <h1>Shopping Cart ({totalCartItems})</h1>
 
       <ul>
         {cartProducts.map((product) => (
