@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import Image from './Image';
 import RoomImg from './RoomImg';
+import InfoContainer from './InfoContainer';
 
 const PosterContent = styled.div`
   display: flex;
@@ -24,5 +25,6 @@ const PosterContent = styled.div`
 
 PosterContent.Image = Image;
 PosterContent.RoomImg = RoomImg;
+PosterContent.InfoContainer = InfoContainer;
 
 export default PosterContent;

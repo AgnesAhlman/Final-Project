@@ -18,31 +18,15 @@ const Poster = (props) => {
           <PosterContent.Image src={props.product.img} alt="" />
           <PosterContent.RoomImg src={props.product.roomImg} alt="" />
         </article>
-        <span> {props.product.title}</span>
-        <p>fr. {props.product.price} kr</p>
+        <PosterContent.InfoContainer>
+          <h3> {props.product.title}</h3>
+          <h4>
+            <p>fr. </p> {props.product.price} <p> kr</p>
+          </h4>
+        </PosterContent.InfoContainer>
       </Links>
     </PosterContent>
   );
 };
 
 export default Poster;
-
-/* <a
-href={item.github}
-alt="project landingpage"
-target="_blank"
-rel="noopener noreferrer">
-<FontAwesomeIcon
-  icon={faGithub}
-  size="3x"
-  color="#212427" />
-</a>
-
-<a
-href={item.netlify}
-alt="project landingpage"
-target="_blank"
-rel="noopener noreferrer">
-<CardOverlay />
-<img src={item.image} alt="project poster" />
-</a> */
