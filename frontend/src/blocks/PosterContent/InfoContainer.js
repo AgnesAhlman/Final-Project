@@ -9,7 +9,7 @@ const InfoContainer = styled.div`
 
   p {
     margin: 0;
-    font-size: 12px;
+    font-size: 0.7rem;
   }
 
   h4 {
@@ -24,6 +24,8 @@ const InfoContainer = styled.div`
 
   h3 {
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
   }
 `;
 

@@ -2,29 +2,29 @@
   {
     "_id": "63ad791caf35b05813892255",
     "group": 1,
-    "title": "body",
+    "title": "Embrace",
     "color": "beige",
     "description": "My description",
     "img": "https://storage.googleapis.com/final-project-posters/body.jpg",
-    "price": 500,
+    "price": 200,
     "size": "70x100",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8386.jpg"
   },
   {
     "_id": "63ad791caf35b05813892258",
     "group": 2,
-    "title": "flower",
+    "title": "Buzzing Blooms",
     "color": "beige",
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/flower.jpg",
-    "price": 400,
+    "price": 200,
     "size": "70x100",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8391.jpg"
   },
   {
     "_id": "63ad791caf35b05813892259",
     "group": 2,
-    "title": "Flower",
+    "title": "Buzzing Blooms",
     "color": "beige",
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/flowerbeige.jpg",
@@ -35,7 +35,7 @@
   {
     "_id": "63ad791caf35b05813892260",
     "group": 2,
-    "title": "Cat",
+    "title": "Butterfly Chase",
     "color": "Yellow",
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/cat.jpg",
@@ -46,7 +46,7 @@
   {
     "_id": "63ad791caf35b05813892261",
     "group": 2,
-    "title": "Bird",
+    "title": "Birdy",
     "color": "Yellow",
     "description": "test",
     "img": "https://storage.googleapis.com/final-project-posters/bird.jpg",
