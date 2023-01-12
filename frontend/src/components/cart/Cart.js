@@ -56,7 +56,6 @@ const Cart = () => {
     <div>
       {!cartItems.length ? (
         <EmptyCart>
-          <p>Total price:·{totalPrice}:-</p>
           <h1>Shopping Cart ({totalCartItems})</h1>
           <p>Oh the cart is empty! :(</p>
         </EmptyCart>
