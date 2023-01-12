@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import Icon from './Icon';
+import UserIcon from './UserIcon';
 
 const Navbar = styled.div`
   position: ${(props) => (props.primary ? 'absolute' : 'fixed')};
@@ -20,5 +21,6 @@ const Navbar = styled.div`
 `;
 
 Navbar.Icon = Icon;
+Navbar.UserIcon = UserIcon;
 
 export default Navbar;

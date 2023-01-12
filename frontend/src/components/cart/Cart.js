@@ -2,6 +2,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable prettier/prettier */
 import EmptyCart from 'blocks/EmptyCart';
+import Navbar from 'blocks/Navbar';
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosters } from 'reducers/products';
