@@ -9,7 +9,7 @@ const StyledFooter = styled.div`
   background-color: #353535;
   color: white;
   padding: 2rem;
-  width: calc(100% - 4rem);
+  width: 100%;
 
   img {
     width: 8rem;

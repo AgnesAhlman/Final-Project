@@ -6,11 +6,11 @@ export const Wrapper = styled.div`
   align-items: center;
   background-color: ${(props) => props.bgColor || 'transparent'};
   max-width: 1024px;
-  width: calc(100% - 10rem);
+  width: 100%;
   padding: 0 5rem;
 
   @media (max-width: 768px) {
     padding: 0 2rem;
-    width: calc(100% - 4rem);
+    width: 100%;
   }
 `;

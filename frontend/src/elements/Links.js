@@ -10,7 +10,7 @@ const Links = styled(Link)`
     props.badge &&
     `
     &:after {
-      background-color: #e8ba8c;
+      background-color: black;
       color: white;
       position: absolute;
       padding: 2px;
