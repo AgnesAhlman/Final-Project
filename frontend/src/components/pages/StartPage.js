@@ -1,3 +1,4 @@
+import Grid from 'blocks/Grid';
 import Footer from 'components/Footer';
 import { Wrapper } from 'elements/Wrapper';
 import React from 'react';
@@ -9,14 +10,16 @@ const StartPage = () => {
   return (
     <>
       <Navbar shadow />
-      <Wrapper>
-        <Header>
-          <Header.LogoContainer>
-            <img src="logo.png" alt="logo" />
-          </Header.LogoContainer>
-        </Header>
-        <Footer />
-      </Wrapper>
+      <Header>
+        <Wrapper>
+          <Grid justify="flex-end" align="center">
+            <Grid.Cell width={1 / 3} justify="center" align="center">
+              <img src="logo.svg" alt="logo" width="200" />
+            </Grid.Cell>
+          </Grid>
+        </Wrapper>
+      </Header>
+      <Footer />
     </>
   );
 };

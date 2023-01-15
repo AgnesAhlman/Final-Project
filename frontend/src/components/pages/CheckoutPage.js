@@ -1,15 +1,24 @@
-import { AllPosterWrapper } from 'elements/AllPosterWrapper';
 import React from 'react';
+
+import Footer from 'components/Footer';
+import { Background } from 'elements/Background';
+
+import { Wrapper } from 'elements/Wrapper';
+
 import Cart from '../cart/Cart';
 import Navbar from '../Navbar';
 
 const CheckoutPage = () => {
   return (
-    <AllPosterWrapper center>
+    <>
       <Navbar shadow />
-
-      <Cart />
-    </AllPosterWrapper>
+      <Background>
+        <Wrapper center bgColor="white">
+          <Cart />
+        </Wrapper>
+      </Background>
+      <Footer />
+    </>
   );
 };
 

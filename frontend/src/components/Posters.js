@@ -1,3 +1,4 @@
+import Grid from 'blocks/Grid';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosters } from '../reducers/products';
@@ -14,13 +15,19 @@ const Posters = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Grid>
       {allProducts.map((product) => (
-        <div key={product._id}>
+        <Grid.Cell
+          mobile={1}
+          tablet={1 / 2}
+          width={1 / 3}
+          key={product._id}
+          align="center"
+        >
           <Poster product={product} />
-        </div>
+        </Grid.Cell>
       ))}
-    </>
+    </Grid>
   );
 };
 

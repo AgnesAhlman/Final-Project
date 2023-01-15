@@ -1,15 +1,12 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const Background = styled.div`
+  background-color: var(--main-bg-color);
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 10rem;
-  flex-direction: ${(props) => (props.column ? 'column' : 'row')};
+  flex-direction: column;
   align-items: center;
-  background-color: white;
-  width: 80%;
-
-  h1 {
-    padding: 5rem;
-  }
+  justify-content: center;
+  padding-top: ${(props) => props.padding};
+  padding-bottom: ${(props) => props.padding};
 `;

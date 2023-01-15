@@ -1,9 +1,9 @@
 import Footer from 'components/Footer';
-import { AllPosterWrapper } from 'elements/AllPosterWrapper';
-import { Background } from 'elements/Background';
-import { Grid } from 'elements/Grid';
+import { Wrapper } from 'elements/Wrapper';
 
 import React from 'react';
+import { Background } from 'elements/Background';
+import { Title } from 'elements/Title';
 import Navbar from '../Navbar';
 import Posters from '../Posters';
 
@@ -11,15 +11,13 @@ const AllPostersPage = () => {
   return (
     <>
       <Navbar shadow />
-      <AllPosterWrapper center>
-        <Background column big>
-          <h1>POSTERS</h1>
-          <Grid>
-            <Posters />
-          </Grid>
-        </Background>
-        <Footer />
-      </AllPosterWrapper>
+      <Background padding="10rem">
+        <Wrapper center bgColor="white">
+          <Title>POSTERS</Title>
+          <Posters />
+        </Wrapper>
+      </Background>
+      <Footer />
     </>
   );
 };
