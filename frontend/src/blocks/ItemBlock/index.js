@@ -8,7 +8,6 @@ const ItemBlock = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
-  width: 70vw;
   padding: 2rem;
   margin-top: 2rem;
 
