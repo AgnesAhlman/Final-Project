@@ -10,6 +10,10 @@ const StyledFooter = styled.div`
   color: white;
   padding: 2rem;
   width: calc(100% - 4rem);
+
+  img {
+    width: 8rem;
+  }
 `;
 
 StyledFooter.Icon = Icon;
