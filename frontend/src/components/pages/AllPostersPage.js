@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import { AllPosterWrapper } from 'elements/AllPosterWrapper';
 import { Background } from 'elements/Background';
 import { Grid } from 'elements/Grid';
@@ -17,6 +18,7 @@ const AllPostersPage = () => {
             <Posters />
           </Grid>
         </Background>
+        <Footer />
       </AllPosterWrapper>
     </>
   );

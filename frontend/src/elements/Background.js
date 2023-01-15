@@ -6,9 +6,9 @@ export const Background = styled.div`
   margin-top: 10rem;
   flex-direction: ${(props) => (props.column ? 'column' : 'row')};
   align-items: center;
-
   background-color: white;
   width: 80%;
+
   h1 {
     padding: 5rem;
   }

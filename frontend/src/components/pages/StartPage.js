@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import { Wrapper } from 'elements/Wrapper';
 import React from 'react';
 
@@ -14,6 +15,7 @@ const StartPage = () => {
             <img src="logo.png" alt="logo" />
           </Header.LogoContainer>
         </Header>
+        <Footer />
       </Wrapper>
     </>
   );

@@ -17,3 +17,7 @@ code {
 :root {
   --main-bg-color: #e8eae7;
 }
+
+p {
+  margin: 0;
+}
