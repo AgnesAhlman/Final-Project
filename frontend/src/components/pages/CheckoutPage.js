@@ -7,7 +7,7 @@ const CheckoutPage = () => {
   return (
     <AllPosterWrapper center>
       <Navbar shadow />
-      <div>CheckoutPage</div>
+
       <Cart />
     </AllPosterWrapper>
   );
