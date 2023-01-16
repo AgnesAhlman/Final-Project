@@ -46,7 +46,7 @@ export const MenuLinks = styled.nav`
   text-align: center;
   height: 100vh;
   width: 100%;
-  background: #d7d7d7;
+  background: var(--main-bg-color);
   position: fixed;
   top: 0rem;
   right: 0;

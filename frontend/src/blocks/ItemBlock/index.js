@@ -1,35 +1,25 @@
 import styled from 'styled-components/macro';
-
-import Img from './Img';
-import Button from './Button';
 import PriceContainer from './PriceContainer';
+import Button from './Button';
+import IconButton from './IconButton';
+import Icon from './Icon';
 
 const ItemBlock = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.column ? 'column' : 'row')};
   background-color: white;
+  width: 95%;
   padding: 2rem;
   margin-top: 2rem;
 
-  button {
-    background-color: transparent;
-    border: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    img {
-      max-width: 1rem;
-    }
-  }
-
-  img {
-    max-width: 10rem;
+  & img {
+    max-width: 100%;
   }
 `;
 
-ItemBlock.Img = Img;
-ItemBlock.Button = Button;
 ItemBlock.PriceContainer = PriceContainer;
+ItemBlock.Button = Button;
+ItemBlock.IconButton = IconButton;
+ItemBlock.Icon = Icon;
 
 export default ItemBlock;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Links from 'elements/Links';
 import useWindowSize from 'hooks/useWindowSize';
-import { MenuIcon, MenuLinks } from 'blocks/Hamburger.js';
+import { MenuIcon, MenuLinks } from 'blocks/Hamburger/index.js';
 import StyledNavbar from '../blocks/Navbar';
 
 const Dropdown = () => {
