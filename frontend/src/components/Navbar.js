@@ -1,11 +1,17 @@
 import React from 'react';
 import useCartProducts from 'hooks/useCartProducts';
+
 import Links from '../elements/Links';
 import StyledNavbar from '../blocks/Navbar';
+import Dropdown from './Dropdown';
 
 const Navbar = (props) => {
   const { totalCartItems } = useCartProducts();
   return (
+
+    
+      <Dropdown />
+
     <StyledNavbar shadow={props.shadow} primary={props.primary}>
       <Links to="/">Home</Links>
       <Links to="/posters">Posters</Links>
@@ -16,6 +22,7 @@ const Navbar = (props) => {
         <StyledNavbar.Icon src="/cartIcon.svg" alt="cartIcon" />
       </Links>
     </StyledNavbar>
+
   );
 };
 
