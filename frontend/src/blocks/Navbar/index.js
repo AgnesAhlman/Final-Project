@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import Icon from './Icon';
 import UserIcon from './UserIcon';
@@ -12,7 +12,7 @@ const Navbar = styled.div`
   justify-content: flex-end;
   gap: 1rem;
   padding: 1rem;
-  width: calc(100% - 2rem);
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   box-shadow: ${(props) => {
     return props.shadow ? 'rgba(0, 0, 0, 0.11) 0px 3px 8px;' : 'none';

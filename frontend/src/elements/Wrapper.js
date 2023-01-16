@@ -1,7 +1,16 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${(props) => props.bgColor || 'transparent'};
+  max-width: 1024px;
+  width: 100%;
+  padding: 0 5rem;
 
-  background-color: var(--main-bg-color);
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+    width: 100%;
+  }
 `;

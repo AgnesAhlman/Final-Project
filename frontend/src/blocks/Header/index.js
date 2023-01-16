@@ -1,17 +1,18 @@
-import styled from 'styled-components';
-
-import LogoContainer from './LogoContainer';
+import styled from 'styled-components/macro';
 
 const Header = styled.div`
   display: flex;
-  position: relative;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   background-image: url('heroImg.jpg');
   background-size: cover;
   width: 100%;
-`;
+  background-position-x: center;
 
-Header.LogoContainer = LogoContainer;
+  @media (max-width: 768px) {
+    background-position-x: -600px;
+  }
+`;
 
 export default Header;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import Img from './Img';
 import Button from './Button';
@@ -8,7 +8,6 @@ const ItemBlock = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
-  width: 70vw;
   padding: 2rem;
   margin-top: 2rem;
 
