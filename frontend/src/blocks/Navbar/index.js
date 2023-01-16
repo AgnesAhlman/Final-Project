@@ -18,6 +18,7 @@ const Navbar = styled.div`
     return props.shadow ? 'rgba(0, 0, 0, 0.11) 0px 3px 8px;' : 'none';
   }};
   z-index: 1;
+  min-height: 67px;
 `;
 
 Navbar.Icon = Icon;
