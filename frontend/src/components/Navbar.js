@@ -1,16 +1,16 @@
 import React from 'react';
 import useCartProducts from 'hooks/useCartProducts';
 
-import useHamburger from 'hooks/useWindowSize';
+import useWindowSize from 'hooks/useWindowSize';
 import Links from '../elements/Links';
 import StyledNavbar from '../blocks/Navbar';
 import Dropdown from './Dropdown';
 
 const Navbar = (props) => {
-  const { isMobile } = useHamburger();
-  // const showDropdown = useWindowSize();
+  const { isMobile } = useWindowSize();
   const { totalCartItems } = useCartProducts();
   return (
+
     <StyledNavbar shadow={props.shadow} primary={props.primary}>
       {isMobile ? (
         <Dropdown />
@@ -27,6 +27,7 @@ const Navbar = (props) => {
         </>
       )}
     </StyledNavbar>
+
   );
 };
 
