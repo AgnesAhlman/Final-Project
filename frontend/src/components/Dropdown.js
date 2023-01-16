@@ -53,8 +53,8 @@ const MenuLinks = styled.nav`
   height: 100vh;
   width: 100%;
   background: #d7d7d7;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 0rem;
   right: 0;
   z-index: 5;
   transition: transform 300ms;
@@ -97,8 +97,10 @@ const Dropdown = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleResize);
     };
   }, []);
 
@@ -118,7 +120,6 @@ const Dropdown = () => {
         showDropdown={showDropdown}
         nav={nav}
         onClick={() => {
-          console.log('MenuIcon Clicked');
           setNav(!nav);
         }}
       >
