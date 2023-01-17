@@ -2,6 +2,8 @@ import styled from 'styled-components/macro';
 
 export const Cell = styled.div`
   width: ${(props) => props.width * 100}%;
+  background-color: ${(props) => props.bgColor || 'transparent'};
+
   flex-direction: ${(props) => props.direction || 'column'};
   justify-content: ${(props) => props.justify || 'flex-start'};
   align-items: ${(props) => props.align || 'flex-start'};

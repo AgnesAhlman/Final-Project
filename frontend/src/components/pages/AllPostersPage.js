@@ -12,7 +12,7 @@ const AllPostersPage = () => {
     <>
       <Navbar shadow />
       <Background padding="10rem">
-        <Wrapper center bgColor="white">
+        <Wrapper center bgColor="white" padding="0rem 8rem">
           <Title>POSTERS</Title>
           <Posters />
         </Wrapper>

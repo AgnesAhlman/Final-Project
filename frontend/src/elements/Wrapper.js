@@ -7,7 +7,8 @@ export const Wrapper = styled.div`
   background-color: ${(props) => props.bgColor || 'transparent'};
   max-width: 1024px;
   width: 100%;
-  padding: 0 5rem;
+  padding: ${(props) => props.padding};
+  margin-top: ${(props) => (props.margin ? 'var(--main-navbar-margin)' : '0')};
 
   @media (max-width: 768px) {
     padding: 0 2rem;

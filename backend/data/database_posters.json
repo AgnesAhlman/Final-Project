@@ -4,10 +4,10 @@
     "group": 1,
     "title": "Embrace",
     "color": "beige",
-    "description": "My description",
+    "description": "Experience the beauty of hand-drawn art with our posters, created using the Procreate app.",
     "img": "https://storage.googleapis.com/final-project-posters/body.jpg",
-    "price": 200,
-    "size": "70x100",
+    "price": 250,
+    "size": "50x70",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8386.jpg"
   },
   {
@@ -15,10 +15,10 @@
     "group": 2,
     "title": "Buzzing Blooms",
     "color": "beige",
-    "description": "test",
+    "description": "Experience the beauty of hand-drawn art with our posters, created using the Procreate app.",
     "img": "https://storage.googleapis.com/final-project-posters/flower.jpg",
-    "price": 200,
-    "size": "70x100",
+    "price": 250,
+    "size": "50x70",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8391.jpg"
   },
   {
@@ -26,10 +26,10 @@
     "group": 2,
     "title": "Buzzing Blooms",
     "color": "beige",
-    "description": "test",
+    "description": "Experience the beauty of hand-drawn art with our posters, created using the Procreate app.",
     "img": "https://storage.googleapis.com/final-project-posters/flowerbeige.jpg",
-    "price": 200,
-    "size": "70x100",
+    "price": 250,
+    "size": "50x70",
     "roomImg": "https://storage.googleapis.com/final-project-posters/IMG_8396.jpg"
   },
   {
@@ -37,10 +37,10 @@
     "group": 2,
     "title": "Butterfly Chase",
     "color": "Yellow",
-    "description": "test",
+    "description": "Experience the beauty of hand-drawn art with our posters, created using the Procreate app.",
     "img": "https://storage.googleapis.com/final-project-posters/cat.jpg",
-    "price": 200,
-    "size": "70x100",
+    "price": 250,
+    "size": "50x70",
     "roomImg": "https://storage.googleapis.com/final-project-posters/roomPosters/IMG_8380.jpg"
   },
   {
@@ -48,10 +48,10 @@
     "group": 2,
     "title": "Birdy",
     "color": "Yellow",
-    "description": "test",
+    "description": "Experience the beauty of hand-drawn art with our posters, created using the Procreate app.",
     "img": "https://storage.googleapis.com/final-project-posters/bird.jpg",
-    "price": 200,
-    "size": "70x100",
+    "price": 250,
+    "size": "50x70",
     "roomImg": "https://storage.googleapis.com/final-project-posters/roomPosters/IMG_8372.jpg"
   },
   {
@@ -59,10 +59,10 @@
     "group": 2,
     "title": "Face",
     "color": "Purple",
-    "description": "test",
+    "description": "Experience the beauty of hand-drawn art with our posters, created using the Procreate app.",
     "img": "https://storage.googleapis.com/final-project-posters/face.jpg",
-    "price": 200,
-    "size": "70x100",
+    "price": 250,
+    "size": "50x70",
     "roomImg": "https://storage.googleapis.com/final-project-posters/roomPosters/IMG_8375.jpg"
   },
   {
@@ -70,10 +70,10 @@
     "group": 2,
     "title": "Stevie Wonder",
     "color": "Purple",
-    "description": "test",
+    "description": "Experience the beauty of hand-drawn art with our posters, created using the Procreate app.",
     "img": "https://storage.googleapis.com/final-project-posters/stevie.jpg",
-    "price": 200,
-    "size": "70x100",
+    "price": 250,
+    "size": "50x70",
     "roomImg": "https://storage.googleapis.com/final-project-posters/roomPosters/IMG_8377.jpg"
   }
 ]
