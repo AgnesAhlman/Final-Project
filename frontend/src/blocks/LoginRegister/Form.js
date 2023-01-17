@@ -4,6 +4,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 
   input,
   textarea {
@@ -11,7 +12,18 @@ const Form = styled.form`
     padding: 1rem;
     width: 15rem;
     margin-bottom: 2rem;
-    border-width: 2px;
+    border-width: 0px;
+  }
+
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p.error {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 1rem;
   }
 `;
 

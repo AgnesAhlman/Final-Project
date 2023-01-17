@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import user from 'reducers/user';
+import Register from './components/pages/Register';
 import AllPosterPage from './components/pages/AllPostersPage';
 import StartPage from './components/pages/StartPage';
 
@@ -32,6 +33,7 @@ export const App = () => {
           <Route path="/posters/:id" element={<SinglePosterPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="login" element={<LogIn />} />
+          <Route path="Register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </Provider>
