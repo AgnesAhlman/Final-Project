@@ -7,6 +7,7 @@ export const Cell = styled.div`
   align-items: ${(props) => props.align || 'flex-start'};
   display: flex;
   padding: ${(props) => props.padding};
+  align-self: ${(props) => props.alignSelf || 'unset'};
 
   @media (max-width: 992px) {
     width: ${(props) => (props.tablet ? props.tablet * 100 : 100)}%;

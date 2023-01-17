@@ -83,6 +83,7 @@
         "children": true
       }
     ],
+
     "react/jsx-filename-extension": "off",
     "react/jsx-no-bind": "error",
     "react/jsx-uses-react": "warn",

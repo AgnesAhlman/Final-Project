@@ -37,8 +37,6 @@ const useCartProducts = () => {
     );
   }, [products, cartItems]);
 
-  console.log(cartItems, products, cartProducts);
-
   const totalPrice = useMemo(() => {
     return cartProducts.reduce(
       (total, item) => total + item.price * item.quantity,

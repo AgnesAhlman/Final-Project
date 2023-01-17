@@ -2,6 +2,7 @@ import Grid from 'blocks/Grid';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosters } from '../reducers/products';
+// import CartCard from './pages/CartCard';
 
 import Poster from './Poster';
 
