@@ -2,6 +2,7 @@ import LoginRegister from 'blocks/LoginRegister';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'reducers/user';
+import Button from 'blocks/LoginRegister/Button';
 
 const Form = (props) => {
   const [username, setUsername] = useState('');
@@ -33,9 +34,9 @@ const Form = (props) => {
           placeholder="Password"
         />
       </label>
-      <button type="submit">
-        {props.mode === 'login' ? 'Login' : 'Register'}
-      </button>
+      <Button bgColor type="submit">
+        {props.mode === 'login' ? 'SIGN IN' : 'SIGN UP'}
+      </Button>
     </LoginRegister.Form>
   );
 };
