@@ -26,8 +26,18 @@ code {
 
 :root {
   --main-bg-color: #e8eae7;
+  --main-navbar-margin: 5rem;
 }
 
 p {
   margin: 0;
+}
+
+.carousel.carousel-slider {
+  overflow: visible !important;
+  padding: 1rem;
+}
+
+.carousel .control-dots {
+  width: calc(100% - 2rem) !important;
 }

@@ -12,10 +12,11 @@ const Button = styled.button`
   padding: 0.5rem;
   gap: 1rem;
   border: none;
+  margin: 2rem 0;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--main-bg-color);
+    background-color: #343434;
   }
 
   img {
