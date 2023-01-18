@@ -1,15 +1,25 @@
 import LoginRegister from 'blocks/LoginRegister';
 import { Wrapper } from 'elements/Wrapper';
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Background } from 'elements/Background';
 import Grid from 'blocks/Grid';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar';
 
 import Form from '../Form';
 
 const Register = () => {
   const errorMessage = useSelector((store) => store.user.error);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user } = useSelector((store) => store.user);
+
+  useEffect(() => {
+    if (user?.accessToken) {
+      navigate('/posters');
+    }
+  }, [user?.accessToken, dispatch, navigate]);
   return (
     <>
       <Navbar shadow />
