@@ -10,4 +10,9 @@ export const Icon = styled.a`
   img {
     width: 75%;
   }
+
+  @media (max-width: 600px) {
+    max-width: 28px;
+    height: 28px;
+  }
 `;
