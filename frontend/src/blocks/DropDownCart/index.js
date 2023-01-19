@@ -24,7 +24,7 @@ const CartCardContainer = styled.div`
     width: 100%;
     text-align: center;
   }
-  && p {
+  p {
     width: 100%;
     text-align: end;
   }

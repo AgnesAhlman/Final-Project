@@ -8,17 +8,12 @@ const Footer = () => {
   return (
     <StyledFooter>
       <Wrapper>
-        <Grid>
-          <Grid.Cell width={1 / 2}>
+        <Grid direction="column" align="center">
+          <Grid.Cell width={1 / 2} align="center">
             <StyledFooter.Logo src="/logo.svg" alt="logo-artbyahlman" />
           </Grid.Cell>
 
-          <Grid.Cell width={1 / 4}>
-            <p>Contact</p>
-            <p>Terms & Conditions</p>
-            <p>Customer Support</p>
-          </Grid.Cell>
-          <Grid.Cell width={1 / 4}>
+          <Grid.Cell width={1 / 2} align="center">
             <StyledFooter.Icon
               href="https://www.instagram.com/artbyahlman/"
               target="_blank"

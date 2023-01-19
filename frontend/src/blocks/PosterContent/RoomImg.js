@@ -13,6 +13,11 @@ const RoomImg = styled.img`
     opacity: 1;
     transition: 0.3 ease-in-out;
   }
+  @media (max-width: 768px) {
+    &:hover {
+      opacity: 0;
+    }
+  }
 `;
 
 export default RoomImg;

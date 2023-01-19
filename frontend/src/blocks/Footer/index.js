@@ -7,7 +7,7 @@ const StyledFooter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #a39387;
+  background-color: #beac9f;
   color: black;
   padding: 2rem;
   width: 100%;

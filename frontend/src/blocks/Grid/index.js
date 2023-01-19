@@ -3,7 +3,7 @@ import { Cell } from './Cell';
 
 const Grid = styled.div`
   display: flex;
-  flex-direction: ${(props) => props.column || 'flex-start'};
+  flex-direction: ${(props) => props.direction || 'flex-start'};
   flex-wrap: wrap;
   width: 100%;
   justify-content: ${(props) => props.justify || 'flex-start'};
