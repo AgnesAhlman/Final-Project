@@ -10,6 +10,10 @@ const Header = styled.div`
   width: 100%;
   background-position-x: center;
 
+  @media (max-width: 1200px) {
+    justify-content: flex-start;
+  }
+
   @media (max-width: 768px) {
     background-position-x: -400px;
   }

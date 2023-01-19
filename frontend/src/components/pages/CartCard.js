@@ -17,13 +17,14 @@ const CartCard = () => {
           return (
             <CartCardContainer.Product>
               <img key={cartProduct._id} src={cartProduct.img} alt="" />
-              <p>{cartProduct.price} kr</p>
+
               <p> {cartProduct.quantity}</p>
+              <p>{cartProduct.price} kr</p>
             </CartCardContainer.Product>
           );
         })}
       </CartCardContainer.Container>
-      <p>Total:{totalPrice}</p>
+      <p>Total {totalPrice} kr</p>
     </CartCardContainer>
   );
 };

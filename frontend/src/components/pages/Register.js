@@ -6,6 +6,7 @@ import { Background } from 'elements/Background';
 import Grid from 'blocks/Grid';
 import { useNavigate } from 'react-router-dom';
 import Footer from 'components/Footer';
+import FormContainer from 'blocks/LoginRegister/FormContainer';
 import Navbar from '../Navbar';
 
 import Form from '../Form';
@@ -29,9 +30,12 @@ const Register = () => {
           <Grid align="center" boxShadow>
             <Grid.Cell align="center" width={1 / 2}>
               <LoginRegister>
-                <div>
-                  <Form mode="Register" />
-                </div>
+                <FormContainer>
+                  <h1>Register!</h1>
+                  <div>
+                    <Form mode="Register" />
+                  </div>
+                </FormContainer>
               </LoginRegister>
             </Grid.Cell>
             <Grid.Cell width={1 / 2} justify="center" align="center">

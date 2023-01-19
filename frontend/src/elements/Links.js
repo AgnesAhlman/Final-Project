@@ -13,15 +13,15 @@ const Links = styled(Link)`
       background-color: black;
       color: white;
       position: absolute;
-      padding: 2px;
+      padding: 3px;
       right: -10px;
       top: 12px;
-      border-radius: 10px;
-      width: 14px;
-      height: 14px;
+      border-radius: 16px;
+      width: 16px;
+      height: 16px;
       font-size: 10px;
       text-align: center;
-      line-height: 14px;
+      line-height: 10px;
       font-weight: 800;
       content: '${props.badge}';
     }
