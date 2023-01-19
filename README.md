@@ -16,7 +16,7 @@ One of the challenges was implementing a cart system that allows users to add it
 - react-router-dom
 - Styled Components
 
-# Tech used in backend
+### Backend
 
 - Mongoose
 - Express.js
