@@ -15,7 +15,7 @@ const Header = styled.div`
   }
 
   @media (max-width: 768px) {
-    background-position-x: -400px;
+    background-position-x: -420px;
   }
 `;
 

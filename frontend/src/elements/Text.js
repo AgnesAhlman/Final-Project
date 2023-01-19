@@ -4,7 +4,7 @@ export const Text = styled.p`
   font-size: 1.06rem;
   width: 71ch;
   max-width: 100%;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   font-family: 'Nunito Sans', sans-serif;
   padding: 5rem;
 

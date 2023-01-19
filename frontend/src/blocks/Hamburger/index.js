@@ -13,7 +13,7 @@ export const MenuIcon = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 6;
+  z-index: 15;
 
   div {
     width: 1.5rem;
@@ -50,7 +50,7 @@ export const MenuLinks = styled.nav`
   position: fixed;
   top: 0rem;
   right: 0;
-  z-index: 5;
+  z-index: 10;
   transition: transform 300ms;
   transform: ${({ nav }) => (nav ? 'translateX(0)' : 'translateX(100%)')};
   @media (max-width: 769px) {
@@ -59,6 +59,7 @@ export const MenuLinks = styled.nav`
 
   ul {
     list-style-type: none;
+    padding: 0;
   }
 
   li {

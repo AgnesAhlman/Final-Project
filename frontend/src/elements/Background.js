@@ -9,4 +9,10 @@ export const Background = styled.div`
   justify-content: center;
   padding-top: ${(props) => props.padding};
   padding-bottom: ${(props) => props.padding};
+
+  @media (max-width: 576px) {
+    // navbar height
+    padding-top: 67px;
+    padding-bottom: 0;
+  }
 `;

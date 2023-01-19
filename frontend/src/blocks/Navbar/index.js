@@ -17,7 +17,7 @@ const Navbar = styled.div`
   box-shadow: ${(props) => {
     return props.shadow ? 'rgba(0, 0, 0, 0.11) 0px 3px 8px;' : 'none';
   }};
-  z-index: 1;
+  z-index: 3;
   min-height: 67px;
 `;
 

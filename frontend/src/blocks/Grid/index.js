@@ -11,6 +11,10 @@ const Grid = styled.div`
   padding-top: ${(props) => props.padding};
   box-shadow: ${(props) =>
     props.boxShadow ? 'rgb(0 0 0 / 11%) 0px 3px 8px;' : 'none'};
+
+  @media (max-width: 576px) {
+    box-shadow: none;
+  }
 `;
 
 Grid.Cell = Cell;

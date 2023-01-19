@@ -27,13 +27,28 @@ const StartPage = () => {
           <h1>INSPIRATION FROM GALLERY</h1>
           <Grid column>
             <Grid.Cell width={1 / 3} align="center">
-              <img src="gallery1.jpg" alt="posterimg" width="200" />
+              <img
+                src="gallery1.jpg"
+                alt="posterimg"
+                width="280"
+                style={{ marginTop: '1rem' }}
+              />
             </Grid.Cell>
             <Grid.Cell width={1 / 3} align="center">
-              <img src="gallery2.jpg" alt="posterimg" width="200" />
+              <img
+                src="gallery2.jpg"
+                alt="posterimg"
+                width="280"
+                style={{ marginTop: '1rem' }}
+              />
             </Grid.Cell>
             <Grid.Cell width={1 / 3} align="center">
-              <img src="gallery3.jpg" alt="posterimg" width="200" />
+              <img
+                src="gallery3.jpg"
+                alt="posterimg"
+                width="280"
+                style={{ marginTop: '1rem' }}
+              />
             </Grid.Cell>
           </Grid>
           <Section>

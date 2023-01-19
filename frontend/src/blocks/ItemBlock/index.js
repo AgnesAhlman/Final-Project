@@ -10,7 +10,7 @@ const ItemBlock = styled.div`
   background-color: white;
   width: 95%;
   padding: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 
   & img {
     max-width: 100%;
