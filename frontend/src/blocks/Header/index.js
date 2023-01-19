@@ -11,7 +11,7 @@ const Header = styled.div`
   background-position-x: center;
 
   @media (max-width: 768px) {
-    background-position-x: -600px;
+    background-position-x: -500px;
   }
 `;
 

@@ -7,4 +7,8 @@ export const Text = styled.p`
   line-height: 1.3rem;
   font-family: 'Nunito Sans', sans-serif;
   padding: 5rem;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `;
