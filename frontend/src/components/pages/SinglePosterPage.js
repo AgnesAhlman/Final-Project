@@ -108,11 +108,12 @@ const SinglePosterPage = () => {
                       <span>Size:</span> {product.size}
                     </h3>
                     <h3>
-                      <span>Price</span> {product.price} :-
+                      <span>Price: </span> {product.price} :-
                     </h3>
                   </div>
                 </div>
                 <div>
+                  <p> {product.description}</p>
                   <ProductDetails.Button
                     type="button"
                     onClick={() => dispatch(addToCart(product))}
@@ -120,7 +121,6 @@ const SinglePosterPage = () => {
                     Add to cart
                     <img src="/cartIcon.svg" alt="cartIcon" />
                   </ProductDetails.Button>
-                  <p> {product.description}</p>
                 </div>
               </ProductDetails>
             </Grid.Cell>

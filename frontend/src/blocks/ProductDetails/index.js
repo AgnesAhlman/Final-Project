@@ -9,6 +9,7 @@ const ProductDetails = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
 
   h1 {
     border-bottom: 1px solid #e0e0e0;
@@ -17,7 +18,9 @@ const ProductDetails = styled.div`
   h3 {
     margin: 0;
   }
-
+  p {
+    text-align: center;
+  }
   div {
     width: 100%;
   }

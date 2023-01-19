@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Background } from 'elements/Background';
 import Grid from 'blocks/Grid';
 import { useNavigate } from 'react-router-dom';
+import Footer from 'components/Footer';
 import Navbar from '../Navbar';
 
 import Form from '../Form';
@@ -25,7 +26,7 @@ const Register = () => {
       <Navbar shadow />
       <Background padding="10rem">
         <Wrapper center bgColor="white">
-          <Grid align="center">
+          <Grid align="center" boxShadow>
             <Grid.Cell align="center" width={1 / 2}>
               <LoginRegister>
                 <div>
@@ -40,6 +41,7 @@ const Register = () => {
           <p>{errorMessage}</p>
         </Wrapper>
       </Background>
+      <Footer />
     </>
   );
 };

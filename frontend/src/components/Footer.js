@@ -10,7 +10,14 @@ const Footer = () => {
       <Wrapper>
         <Grid>
           <Grid.Cell width={1 / 2}>
-            <img src="logo.svg" alt="logo" />
+            <img src="/logo.svg" alt="logo-artbyahlman" />
+          </Grid.Cell>
+
+          <Grid.Cell width={1 / 4}>
+            <h3>Links</h3>
+            <p>Contact</p>
+            <p>Terms & Conditions</p>
+            <p>Customer Support</p>
           </Grid.Cell>
           <Grid.Cell width={1 / 4}>
             <h3> Socials </h3>
@@ -21,11 +28,6 @@ const Footer = () => {
             >
               <img src="/instagram.svg" alt="instagram-icon" />
             </StyledFooter.Icon>
-          </Grid.Cell>
-          <Grid.Cell width={1 / 4}>
-            <h3>Links</h3>
-            <p>Contact</p>
-            <p>Purchase conditions</p>
           </Grid.Cell>
         </Grid>
       </Wrapper>

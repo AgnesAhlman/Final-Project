@@ -5,7 +5,7 @@ import UserIcon from './UserIcon';
 
 const Navbar = styled.div`
   position: ${(props) => (props.primary ? 'absolute' : 'fixed')};
-  background-color: ${(props) => (props.primary ? 'none' : '#eceeeb')};
+  background-color: ${(props) => (props.primary ? 'none' : '#f1eeeb')};
   display: flex;
   flex-direction: row;
   align-items: center;

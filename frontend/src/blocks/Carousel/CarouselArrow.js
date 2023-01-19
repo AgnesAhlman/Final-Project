@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 export const CarouselArrow = styled.button`
   background: transparent;
   position: absolute;
+
   height: 48px;
   top: calc(50% - 24px);
   border: 0;

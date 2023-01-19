@@ -6,13 +6,17 @@ const StyledFooter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #353535;
-  color: white;
+  background-color: #a39387;
+  color: black;
   padding: 2rem;
   width: 100%;
 
   img {
     width: 8rem;
+  }
+
+  p {
+    font-family: 'Source Sans Pro', sans-serif;
   }
 `;
 
