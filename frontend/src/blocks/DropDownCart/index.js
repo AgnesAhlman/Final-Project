@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import Product from './Product';
 import Container from './Container';
+import Empty from './Empty';
 
 const CartCardContainer = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ const CartCardContainer = styled.div`
     width: 100%;
     text-align: center;
   }
-  p {
+  && p {
     width: 100%;
     text-align: end;
   }
@@ -31,5 +32,6 @@ const CartCardContainer = styled.div`
 
 CartCardContainer.Product = Product;
 CartCardContainer.Container = Container;
+CartCardContainer.Empty = Empty;
 
 export default CartCardContainer;

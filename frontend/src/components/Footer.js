@@ -14,13 +14,11 @@ const Footer = () => {
           </Grid.Cell>
 
           <Grid.Cell width={1 / 4}>
-            <h3>Links</h3>
             <p>Contact</p>
             <p>Terms & Conditions</p>
             <p>Customer Support</p>
           </Grid.Cell>
           <Grid.Cell width={1 / 4}>
-            <h3> Socials </h3>
             <StyledFooter.Icon
               href="https://www.instagram.com/artbyahlman/"
               target="_blank"

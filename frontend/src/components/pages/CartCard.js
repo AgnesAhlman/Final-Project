@@ -10,21 +10,27 @@ const CartCard = () => {
   return (
     <CartCardContainer>
       <h3>Your Cart</h3>
-      <CartCardContainer.Container>
-        {cartProducts.map((cartProduct) => {
-          console.log('cartProduct', cartProduct);
+      {cartProducts.length ? (
+        <CartCardContainer.Container>
+          {cartProducts.map((cartProduct) => {
+            console.log('cartProduct', cartProduct);
 
-          return (
-            <CartCardContainer.Product>
-              <img key={cartProduct._id} src={cartProduct.img} alt="" />
+            return (
+              <CartCardContainer.Product>
+                <img key={cartProduct._id} src={cartProduct.img} alt="" />
 
-              <p> {cartProduct.quantity}</p>
-              <p>{cartProduct.price} kr</p>
-            </CartCardContainer.Product>
-          );
-        })}
-      </CartCardContainer.Container>
-      <p>Total {totalPrice} kr</p>
+                <p> {cartProduct.quantity} st</p>
+                <p>{cartProduct.price} kr</p>
+              </CartCardContainer.Product>
+            );
+          })}
+          <p>Total {totalPrice} kr</p>
+        </CartCardContainer.Container>
+      ) : (
+        <CartCardContainer.Empty>
+          <p>Oh the cart is empty!</p>
+        </CartCardContainer.Empty>
+      )}
     </CartCardContainer>
   );
 };

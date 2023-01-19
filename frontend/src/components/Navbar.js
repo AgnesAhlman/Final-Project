@@ -27,7 +27,7 @@ const Navbar = (props) => {
             to="/checkout"
             badge={totalCartItems}
             onMouseEnter={() => setShowCard(true)}
-            // onMouseLeave={() => setShowCard(false)}
+            onMouseLeave={() => setShowCard(false)}
           >
             <StyledNavbar.Icon src="/cartIcon.svg" alt="cartIcon" />
             {showCard && <CartCard />}

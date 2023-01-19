@@ -100,15 +100,12 @@ const SinglePosterPage = () => {
               <ProductDetails>
                 <div>
                   <h1>{product.title}</h1>
-                  <div
-                    className="test
-                "
-                  >
+                  <div>
                     <h3>
-                      <span>Size:</span> {product.size}
+                      <span>Size </span> {product.size}
                     </h3>
                     <h3>
-                      <span>Price: </span> {product.price} :-
+                      <span>Price </span> {product.price} kr
                     </h3>
                   </div>
                 </div>

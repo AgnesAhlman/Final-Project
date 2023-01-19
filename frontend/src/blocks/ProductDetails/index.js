@@ -23,6 +23,7 @@ const ProductDetails = styled.div`
   }
   div {
     width: 100%;
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 992px) {

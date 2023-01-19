@@ -32,7 +32,7 @@ const Cart = () => {
         <Grid.Cell width={1 / 3}>
           <ItemBlock column>
             <h1>Total </h1>
-            <p>{totalPrice} :-</p>
+            <p>{totalPrice} kr</p>
             <ItemBlock.Button type="button" bgColor="black">
               ORDER
             </ItemBlock.Button>

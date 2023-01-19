@@ -10,4 +10,8 @@ export const CarouselIndicator = styled.button`
   margin: 0 0.2rem;
   position: relative;
   top: ${(props) => (props.isSelected ? '27px' : '26px')};
+
+  @media (max-width: 667px) {
+    display: none;
+  }
 `;

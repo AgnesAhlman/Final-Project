@@ -29,7 +29,7 @@ const CartItem = (props) => {
             </ItemBlock.IconButton>
           </div>
           <ItemBlock.PriceContainer>
-            <span>{props.product.price * props.product.quantity}:-</span>
+            <span>{props.product.price * props.product.quantity} kr</span>
           </ItemBlock.PriceContainer>
           <ItemBlock.IconButton
             type="button"
