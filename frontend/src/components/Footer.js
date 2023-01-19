@@ -10,7 +10,7 @@ const Footer = () => {
       <Wrapper>
         <Grid>
           <Grid.Cell width={1 / 2}>
-            <img src="/logo.svg" alt="logo-artbyahlman" />
+            <StyledFooter.Logo src="/logo.svg" alt="logo-artbyahlman" />
           </Grid.Cell>
 
           <Grid.Cell width={1 / 4}>

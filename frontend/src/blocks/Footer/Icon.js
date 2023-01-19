@@ -8,11 +8,6 @@ export const Icon = styled.a`
   justify-content: center;
 
   img {
-    width: 75%;
-  }
-
-  @media (max-width: 576px) {
-    max-width: 18px;
-    height: 18px;
+    width: 70%;
   }
 `;

@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { Icon } from './Icon';
+import { Logo } from './Logo';
 
 const StyledFooter = styled.div`
   display: flex;
@@ -11,15 +12,12 @@ const StyledFooter = styled.div`
   padding: 2rem;
   width: 100%;
 
-  img {
-    width: 8rem;
-  }
-
   p {
     font-family: 'Source Sans Pro', sans-serif;
   }
 `;
 
 StyledFooter.Icon = Icon;
+StyledFooter.Logo = Logo;
 
 export default StyledFooter;
