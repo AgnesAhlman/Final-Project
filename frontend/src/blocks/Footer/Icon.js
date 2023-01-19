@@ -11,8 +11,8 @@ export const Icon = styled.a`
     width: 75%;
   }
 
-  @media (max-width: 600px) {
-    max-width: 28px;
-    height: 28px;
+  @media (max-width: 576px) {
+    max-width: 18px;
+    height: 18px;
   }
 `;
