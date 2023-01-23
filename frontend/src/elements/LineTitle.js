@@ -12,7 +12,7 @@ export const LineTitle = styled.h2`
     background-color: var(--main-bg-color);
     padding: 0 20px;
     position: relative;
-    z-index: 5;
+    z-index: 1;
   }
 
   &:before {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -13,12 +13,16 @@ import { CarouselIndicator } from 'blocks/Carousel/CarouselIndicator';
 import { CarouselArrow } from 'blocks/Carousel/CarouselArrow';
 import { ReactComponent as ChevronRight } from 'blocks/Carousel/chevron_right.svg';
 import { ReactComponent as ChevronLeft } from 'blocks/Carousel/chevron_left.svg';
+import { Alert } from 'elements/Alert';
+import { BsCheck2Circle } from 'react-icons/bs';
 import Navbar from '../Navbar';
 import { getSinglePosters } from '../../reducers/products';
 
 const SinglePosterPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
+
+  const [showToast, setShowToast] = useState(false);
 
   const product = useSelector((store) => {
     return store.products.items.find((item) => item._id === id);
@@ -29,6 +33,14 @@ const SinglePosterPage = () => {
       dispatch(getSinglePosters(id));
     }
   }, [dispatch, id, product]);
+
+  useEffect(() => {
+    if (showToast) {
+      setTimeout(() => {
+        setShowToast(false);
+      }, 2000);
+    }
+  }, [showToast]);
 
   if (!product) {
     // TODO loading state
@@ -113,13 +125,22 @@ const SinglePosterPage = () => {
                   <p> {product.description}</p>
                   <ProductDetails.Button
                     type="button"
-                    onClick={() => dispatch(addToCart(product))}
+                    onClick={() => {
+                      dispatch(addToCart(product));
+                      setShowToast(true);
+                    }}
                   >
                     Add to cart
                     <img src="/cartIcon.svg" alt="cartIcon" />
                   </ProductDetails.Button>
                 </div>
               </ProductDetails>
+              {showToast && (
+                <Alert>
+                  <BsCheck2Circle />
+                  Item added to cart!
+                </Alert>
+              )}
             </Grid.Cell>
           </Grid>
         </Wrapper>
