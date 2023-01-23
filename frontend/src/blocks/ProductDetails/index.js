@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro';
-import Button from './button';
 
 const ProductDetails = styled.div`
   display: flex;
@@ -30,7 +29,5 @@ const ProductDetails = styled.div`
     padding: 4rem 0;
   }
 `;
-
-ProductDetails.Button = Button;
 
 export default ProductDetails;

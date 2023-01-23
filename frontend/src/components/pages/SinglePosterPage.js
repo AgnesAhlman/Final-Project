@@ -15,6 +15,7 @@ import { ReactComponent as ChevronRight } from 'blocks/Carousel/chevron_right.sv
 import { ReactComponent as ChevronLeft } from 'blocks/Carousel/chevron_left.svg';
 import { Alert } from 'elements/Alert';
 import { BsCheck2Circle } from 'react-icons/bs';
+import Button from 'elements/Button';
 import Navbar from '../Navbar';
 import { getSinglePosters } from '../../reducers/products';
 
@@ -123,7 +124,9 @@ const SinglePosterPage = () => {
                 </div>
                 <div>
                   <p> {product.description}</p>
-                  <ProductDetails.Button
+                  <Button
+                    primary
+                    margin="1rem"
                     type="button"
                     onClick={() => {
                       dispatch(addToCart(product));
@@ -132,7 +135,7 @@ const SinglePosterPage = () => {
                   >
                     Add to cart
                     <img src="/cartIcon.svg" alt="cartIcon" />
-                  </ProductDetails.Button>
+                  </Button>
                 </div>
               </ProductDetails>
               {showToast && (

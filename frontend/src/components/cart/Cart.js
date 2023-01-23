@@ -1,6 +1,7 @@
 import EmptyCart from 'blocks/EmptyCart';
 import Grid from 'blocks/Grid';
 import ItemBlock from 'blocks/ItemBlock';
+import Button from 'elements/Button';
 
 import useCartProducts from 'hooks/useCartProducts';
 
@@ -33,9 +34,9 @@ const Cart = () => {
           <ItemBlock column>
             <h1>Total </h1>
             <p>{totalPrice} kr</p>
-            <ItemBlock.Button type="button" bgColor="black">
+            <Button primary type="button">
               ORDER
-            </ItemBlock.Button>
+            </Button>
           </ItemBlock>
         </Grid.Cell>
       </Grid>

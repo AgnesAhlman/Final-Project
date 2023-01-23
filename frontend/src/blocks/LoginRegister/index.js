@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 import Form from './Form';
-import Button from './Button';
+import InputContainer from './InputContainer';
 
 const LoginRegister = styled.div`
   display: flex;
@@ -13,14 +13,9 @@ const LoginRegister = styled.div`
   min-height: 30rem;
 
   gap: 2rem;
-
-  div {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 LoginRegister.Form = Form;
-LoginRegister.Button = Button;
+LoginRegister.InputContainer = InputContainer;
 
 export default LoginRegister;

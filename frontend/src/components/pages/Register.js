@@ -7,6 +7,8 @@ import Grid from 'blocks/Grid';
 import { useNavigate } from 'react-router-dom';
 
 import FormContainer from 'blocks/LoginRegister/FormContainer';
+import { Error } from 'elements/Error';
+import { RiErrorWarningLine } from 'react-icons/ri';
 import Navbar from '../Navbar';
 
 import Form from '../Form';
@@ -32,9 +34,12 @@ const Register = () => {
               <LoginRegister>
                 <FormContainer>
                   <h1>Register!</h1>
-                  <div>
-                    <Form mode="Register" />
-                  </div>
+                  {errorMessage && (
+                    <Error>
+                      <RiErrorWarningLine /> <p>{errorMessage}</p>
+                    </Error>
+                  )}
+                  <Form mode="Register" />
                 </FormContainer>
               </LoginRegister>
             </Grid.Cell>
@@ -42,7 +47,6 @@ const Register = () => {
               <img src="logo.svg" alt="logo" width="200" />
             </Grid.Cell>
           </Grid>
-          <p>{errorMessage}</p>
         </Wrapper>
       </Background>
     </>

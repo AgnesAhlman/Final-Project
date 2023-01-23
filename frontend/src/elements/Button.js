@@ -2,8 +2,6 @@ import styled from 'styled-components/macro';
 
 const Button = styled.button`
   width: 100%;
-  background: black;
-  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,11 +10,16 @@ const Button = styled.button`
   padding: 0.5rem;
   gap: 1rem;
   border: none;
-  margin: 2rem 0;
+  min-height: 36px;
   cursor: pointer;
+  background-color: ${(props) => (props.primary ? 'black' : 'transparent')};
+  color: ${(props) => (props.primary ? 'white' : 'black')};
+  border: ${(props) => (props.primary ? 'none' : '1px solid black')};
+  margin-top: ${(props) => props.margin};
 
   &:hover {
     background-color: #343434;
+    color: white;
   }
 
   img {
