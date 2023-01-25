@@ -46,7 +46,7 @@ app.post('/register', async (req, res) => {
       console.error(error);
       res.status(400).json({
         success: false,
-        response: 'User already exists!'
+        message: 'User already exists!'
       });
     } else {
       console.warn(error.name, error.code);

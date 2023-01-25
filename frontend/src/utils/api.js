@@ -2,9 +2,7 @@
  * use environment variable API_URL to connect to the API,
  * if it doesn't exist default to localhost
  */
-const BASE_URL =
-  process.env.REACT_APP_API_URL ||
-  'https://final-project-rcta3ohygq-lz.a.run.app';
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
 // Singleton
 let accessToken = null;
@@ -16,6 +14,11 @@ export const fetchPosters = async () => {
   try {
     const res = await fetch(`${BASE_URL}/posters`);
     const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
     return data;
   } catch (error) {
     console.error(error);
@@ -27,6 +30,11 @@ export const fetchPostersById = async (id) => {
   try {
     const res = await fetch(`${BASE_URL}/posters/${id}`);
     const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
     return data;
   } catch (error) {
     console.error(error);
@@ -47,8 +55,14 @@ export const login = async (mode, username, password) => {
         password
       })
     };
+
     const res = await fetch(`${BASE_URL}/${mode}`, options);
     const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
     return data;
   } catch (error) {
     console.error(error);
@@ -66,9 +80,15 @@ export const fetchCart = async () => {
       }
     });
     const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
     return data;
   } catch (error) {
-    return console.error(error);
+    console.error(error);
+    return error;
   }
 };
 
@@ -87,6 +107,11 @@ export const createCart = async (items) => {
     };
     const res = await fetch(`${BASE_URL}/cart`, options);
     const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
     return data;
   } catch (error) {
     console.error(error);
@@ -111,6 +136,11 @@ export const updateCart = async (cartId, items) => {
 
     const res = await fetch(`${BASE_URL}/cart`, options);
     const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
     return data;
   } catch (error) {
     console.error(error);
