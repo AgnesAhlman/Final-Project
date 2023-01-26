@@ -13,12 +13,8 @@ const updatePosters = async () => {
       new: true
     };
 
-    console.log(_id, query, options);
-
     // Finding document object using doc _id
-    const update = await Poster.findByIdAndUpdate(_id, query, options);
-
-    console.log(update);
+    await Poster.findByIdAndUpdate(_id, query, options);
   }
 
   process.exit(0);

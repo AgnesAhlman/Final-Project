@@ -69,13 +69,11 @@ const cart = createSlice({
 export const syncCart = () => {
   return async (dispatch, getState) => {
     const state = getState();
-    console.log('sync cart...', state);
-    if (state.user.isLoggedIn && state.cart.items) {
-      console.log('User is logged in and items exists...');
 
+    if (state.user.isLoggedIn && state.cart.items) {
       if (state.cart.cartId) {
         // Update Cart
-        console.log('Cart id was found, updating cart...');
+
         const data = await api.updateCart(state.cart.cartId, state.cart.items);
 
         if (!data.success) {
@@ -83,7 +81,7 @@ export const syncCart = () => {
         }
       } else {
         // Create Cart
-        console.log('CartId was not found, creating cart...');
+
         const data = await api.createCart(state.cart.items);
 
         if (data.success) {
@@ -92,8 +90,6 @@ export const syncCart = () => {
           dispatch(cart.actions.setError(data.message));
         }
       }
-    } else {
-      console.log('Cannot sync cart, user is NOT logged in...');
     }
   };
 };

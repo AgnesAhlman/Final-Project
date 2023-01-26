@@ -1,8 +1,8 @@
+/* eslint-disable no-useless-escape */
 import mongoose from 'mongoose';
 import crypto from 'crypto';
 
 const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/final-project';
-console.log(`connecting to ${mongoUrl}`);
 
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
@@ -44,10 +44,15 @@ const PosterSchema = new mongoose.Schema({
 });
 
 const UserSchema = new mongoose.Schema({
-  username: {
+  email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    validate: {
+      validator(v) {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+      }
+    }
   },
   password: {
     type: String,

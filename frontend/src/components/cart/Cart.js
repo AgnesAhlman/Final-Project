@@ -3,12 +3,11 @@ import Grid from 'blocks/Grid';
 import ItemBlock from 'blocks/ItemBlock';
 import { Popup } from 'blocks/Popup';
 import Button from 'elements/Button';
-
 import useCartProducts from 'hooks/useCartProducts';
-
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { FaTimes } from 'react-icons/fa';
 import CartItem from './CartItem';
 
 const Cart = () => {
@@ -57,11 +56,11 @@ const Cart = () => {
       {popup && (
         <Popup>
           <Popup.Content>
-            <div className="buttoncontiner">
+            <Popup.Button>
               <button type="button" onClick={() => setPopup(false)}>
-                X
+                <FaTimes />
               </button>
-            </div>
+            </Popup.Button>
             <h1> Ops! </h1>
             <p>
               We apologize for the inconvenience, but our ordering system is

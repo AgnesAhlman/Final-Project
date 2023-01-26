@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import { Content } from './Content';
+import { Button } from './Button';
 
 export const Popup = styled.div`
   display: flex;
@@ -16,3 +17,4 @@ export const Popup = styled.div`
 `;
 
 Popup.Content = Content;
+Popup.Button = Button;

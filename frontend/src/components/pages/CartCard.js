@@ -5,7 +5,6 @@ import React from 'react';
 const CartCard = () => {
   // const allProducts = useSelector((store) => store.products.items);
   const { totalPrice, cartProducts } = useCartProducts();
-  console.log('cartProduct', cartProducts);
 
   return (
     <CartCardContainer>
@@ -13,8 +12,6 @@ const CartCard = () => {
       {cartProducts.length ? (
         <CartCardContainer.Container>
           {cartProducts.map((cartProduct) => {
-            console.log('cartProduct', cartProduct);
-
             return (
               <CartCardContainer.Product>
                 <img key={cartProduct._id} src={cartProduct.img} alt="" />

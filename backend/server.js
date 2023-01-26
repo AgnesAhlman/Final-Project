@@ -129,10 +129,7 @@ app.get('/posters/:id', async (req, res) => {
       });
     }
 
-    console.log(req.params.id);
-
     const singlePoster = await Poster.findById(req.params.id);
-    console.log(singlePoster);
 
     // If single poster was not found, return a 404 error
     if (!singlePoster) {
@@ -155,8 +152,6 @@ app.get('/posters/:id', async (req, res) => {
 app.get('/cart', authenticateUser, async (req, res) => {
   const cart = await Cart.findOne({ owner: res.locals.user._id });
 
-  console.log(cart);
-
   if (!cart) {
     return res.status(404).json({ message: 'Cart not found', success: false });
   }
@@ -168,7 +163,6 @@ app.post('/cart', authenticateUser, async (req, res) => {
   try {
     const { items } = req.body;
 
-    console.log('items', items);
     const cart = new Cart({
       owner: res.locals.user._id,
       items
@@ -179,9 +173,7 @@ app.post('/cart', authenticateUser, async (req, res) => {
       response: cart
     });
   } catch (error) {
-    console.log({ error });
     res.status(500).json({ success: false, message: error.message });
-    console.log(error);
   }
 });
 
@@ -193,7 +185,6 @@ app.post('/cart', authenticateUser, async (req, res) => {
 
 app.patch('/cart', authenticateUser, async (req, res) => {
   const { cartId, items } = req.body;
-  console.log('items', items, 'cartId', cartId);
 
   try {
     const updatedCart = await Cart.findOneAndUpdate(

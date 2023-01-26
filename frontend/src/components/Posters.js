@@ -9,7 +9,6 @@ import Poster from './Poster';
 const Posters = () => {
   const dispatch = useDispatch();
   const allProducts = useSelector((store) => store.products.items);
-  console.log('allproducts', allProducts);
 
   useEffect(() => {
     dispatch(getPosters());
