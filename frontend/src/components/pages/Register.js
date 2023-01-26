@@ -33,7 +33,7 @@ const Register = () => {
             <Grid.Cell align="center" width={1 / 2}>
               <LoginRegister>
                 <FormContainer>
-                  <h1>Register!</h1>
+                  <h1>Register</h1>
                   {errorMessage && (
                     <Error>
                       <RiErrorWarningLine /> <p>{errorMessage}</p>

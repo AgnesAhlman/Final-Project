@@ -1,16 +1,22 @@
 import EmptyCart from 'blocks/EmptyCart';
 import Grid from 'blocks/Grid';
 import ItemBlock from 'blocks/ItemBlock';
+import { Popup } from 'blocks/Popup';
 import Button from 'elements/Button';
 
 import useCartProducts from 'hooks/useCartProducts';
 
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import CartItem from './CartItem';
 
 const Cart = () => {
+  const [popup, setPopup] = useState(false);
   const { cartProducts, cartItems, totalCartItems, totalPrice } =
     useCartProducts();
+  const { user } = useSelector((store) => store.user);
+  const navigate = useNavigate();
 
   if (!cartItems.length) {
     return (
@@ -20,6 +26,14 @@ const Cart = () => {
       </EmptyCart>
     );
   }
+
+  const handleOnClick = () => {
+    if (!user) {
+      navigate('/login');
+    } else {
+      setPopup(true);
+    }
+  };
 
   return (
     <>
@@ -34,12 +48,29 @@ const Cart = () => {
           <ItemBlock column>
             <h1>Total </h1>
             <p>{totalPrice} kr</p>
-            <Button primary type="button">
+            <Button primary type="button" onClick={() => handleOnClick()}>
               ORDER
             </Button>
           </ItemBlock>
         </Grid.Cell>
       </Grid>
+      {popup && (
+        <Popup>
+          <Popup.Content>
+            <div className="buttoncontiner">
+              <button type="button" onClick={() => setPopup(false)}>
+                X
+              </button>
+            </div>
+            <h1> Ops! </h1>
+            <p>
+              We apologize for the inconvenience, but our ordering system is
+              currently under maintenance. Thank you for your patience and
+              understanding.
+            </p>
+          </Popup.Content>
+        </Popup>
+      )}
     </>
   );
 };

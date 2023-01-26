@@ -35,7 +35,7 @@ const LogIn = () => {
             <Grid.Cell align="center" width={1 / 2}>
               <LoginRegister>
                 <FormContainer>
-                  <h1>Welcome!</h1>
+                  <h1>Welcome</h1>
                   {errorMessage && (
                     <Error>
                       <RiErrorWarningLine /> <p>{errorMessage}</p>
@@ -50,7 +50,7 @@ const LogIn = () => {
                     onClick={() => navigate('/register')}
                     className="form-container"
                   >
-                    SIGN UP
+                    Not a user? Register here
                   </Button>
                 </FormContainer>
               </LoginRegister>
