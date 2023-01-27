@@ -14,5 +14,10 @@ export const Content = styled.div`
     width: 50ch;
     text-align: center;
     margin-top: 2rem;
+
+    @media (max-width: 667px) {
+      font-size: 0.6rem;
+      line-height: normal;
+    }
   }
 `;
