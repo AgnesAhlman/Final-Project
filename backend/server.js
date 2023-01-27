@@ -43,13 +43,16 @@ app.post('/register', async (req, res) => {
   } catch (error) {
     // Error code 11000 = duplicate key error
     if (error.name === 'MongoServerError' && error.code === 11000) {
-      console.error(error);
       return res.status(400).json({
         success: false,
         message: 'User already exists!'
       });
+    } else if (error.errors.email) {
+      return res.status(400).json({
+        success: false,
+        message: error.errors.email.message || 'Email validation error...'
+      });
     } else {
-      console.warn(error.name, error.code);
       return res.status(500).json({
         success: false,
         message: 'Unexpected Error...'
