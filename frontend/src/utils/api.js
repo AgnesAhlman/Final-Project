@@ -43,7 +43,7 @@ export const fetchPostersById = async (id) => {
 };
 
 // Login
-export const login = async (mode, username, password) => {
+export const login = async (mode, email, password) => {
   try {
     const options = {
       method: 'POST',
@@ -51,7 +51,7 @@ export const login = async (mode, username, password) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        username,
+        email,
         password
       })
     };

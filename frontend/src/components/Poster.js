@@ -1,12 +1,8 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
-// import cart from '../reducers/cart';
 import PosterContent from '../blocks/PosterContent';
 import Links from '../elements/Links';
 
 const Poster = (props) => {
-  // const dispatch = useDispatch();
-
   if (!props.product) {
     return null;
   }

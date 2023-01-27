@@ -6,26 +6,26 @@ import { logIn } from 'reducers/user';
 import { VscKey } from 'react-icons/vsc';
 
 const Form = (props) => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    dispatch(logIn(props.mode, username, password));
+    dispatch(logIn(props.mode, email, password));
   };
 
   return (
     <LoginRegister.Form onSubmit={onFormSubmit}>
-      <label htmlFor="username">
+      <label htmlFor="email">
         <LoginRegister.InputContainer>
           <img src="/user.svg" alt="user-icon" />
           <input
             type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
           />
         </LoginRegister.InputContainer>
       </label>

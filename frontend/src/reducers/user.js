@@ -20,9 +20,9 @@ const user = createSlice({
   }
 });
 
-export const logIn = (mode, username, password) => {
+export const logIn = (mode, email, password) => {
   return async (dispatch) => {
-    const data = await login(mode, username, password);
+    const data = await login(mode, email, password);
 
     if (data.success) {
       dispatch(user.actions.setError(null));

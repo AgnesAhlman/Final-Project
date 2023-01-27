@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/register', async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   const salt = bcrypt.genSaltSync();
   try {
     if (password.length < 8) {
@@ -28,13 +28,13 @@ app.post('/register', async (req, res) => {
       });
     } else {
       const newUser = await new User({
-        username,
+        email,
         password: bcrypt.hashSync(password, salt)
       }).save();
       res.status(201).json({
         success: true,
         response: {
-          username: newUser.username,
+          email: newUser.email,
           accessToken: newUser.accessToken,
           id: newUser._id
         }
@@ -44,13 +44,13 @@ app.post('/register', async (req, res) => {
     // Error code 11000 = duplicate key error
     if (error.name === 'MongoServerError' && error.code === 11000) {
       console.error(error);
-      res.status(400).json({
+      return res.status(400).json({
         success: false,
         message: 'User already exists!'
       });
     } else {
       console.warn(error.name, error.code);
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         message: 'Unexpected Error...'
       });
@@ -59,15 +59,15 @@ app.post('/register', async (req, res) => {
 });
 
 app.post('/login', async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
     if (user && bcrypt.compareSync(password, user.password)) {
       res.status(200).json({
         success: true,
         response: {
-          username: user.username,
+          email: user.email,
           id: user._id,
           accessToken: user.accessToken
         }

@@ -6,7 +6,7 @@ const products = createSlice({
   initialState: {
     items: [],
     error: null,
-    loading: false
+    isLoading: false
   },
   reducers: {
     setItems: (store, action) => {
@@ -14,6 +14,9 @@ const products = createSlice({
     },
     setError: (store, action) => {
       store.error = action.payload;
+    },
+    setIsLoading: (store, action) => {
+      store.isLoading = action.payload;
     },
     setSingleItem: (store, action) => {
       const existingIdIndex = store.items.findIndex(
@@ -30,7 +33,9 @@ const products = createSlice({
 
 export const getPosters = () => {
   return async (dispatch) => {
+    dispatch(products.actions.setIsLoading(true));
     const data = await fetchPosters();
+    dispatch(products.actions.setIsLoading(false));
 
     if (data.success) {
       dispatch(products.actions.setItems(data.response));

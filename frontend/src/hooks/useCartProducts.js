@@ -11,7 +11,7 @@ const useCartProducts = () => {
     if (!products.length) {
       dispatch(getPosters());
     }
-  });
+  }, [dispatch, products.length]);
 
   // Find products in the cart.
   const cartProducts = useMemo(() => {
