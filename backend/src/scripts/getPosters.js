@@ -1,15 +1,23 @@
 import fs from 'fs';
 import { exit } from 'process';
-import { Poster } from '../mongoose';
+import mongoose from 'mongoose';
+import path from 'path';
+import { Poster } from '../models/posters.model';
+
+const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/final-project';
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.Promise = Promise;
 
 const getPosters = async () => {
   try {
-    const fileName = 'data/database_posters.json';
+    const fileName = path.join(__dirname, '../data/database_posters.json');
 
     // Get posters from DB
+    console.log('Getting posters from DB...');
     const posters = await Poster.find({});
 
     // Write the data to a file
+    console.log(`writting data to ${fileName}...`);
     fs.writeFileSync(fileName, JSON.stringify(posters, null, 2));
 
     exit(0);
