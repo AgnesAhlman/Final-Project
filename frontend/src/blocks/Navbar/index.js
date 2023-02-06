@@ -19,6 +19,7 @@ const Navbar = styled.div`
   }};
   z-index: 3;
   min-height: 67px;
+  font-family: 'Nunito Sans', sans-serif;
 `;
 
 Navbar.Icon = Icon;
