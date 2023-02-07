@@ -10,6 +10,10 @@ export const Content = styled.div`
   padding: 2rem;
   border-radius: 0.5rem;
 
+  && h1 {
+    text-align: center;
+  }
+
   && p {
     width: 50ch;
     text-align: center;

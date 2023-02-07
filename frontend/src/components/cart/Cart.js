@@ -61,7 +61,7 @@ const Cart = () => {
                 <FaTimes />
               </button>
             </Popup.Button>
-            <h1> Ops! </h1>
+            <h1> Well this is awkward... </h1>
             <p>
               We apologize for the inconvenience, but our ordering system is
               currently under maintenance. Thank you for your patience and
