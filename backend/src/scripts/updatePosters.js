@@ -1,6 +1,11 @@
-import { Poster } from '../mongoose';
+import mongoose from 'mongoose';
+import { Poster } from '../models/posters.model';
 
 import posters from '../data/database_posters.json';
+
+const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/final-project';
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.Promise = Promise;
 
 const updatePosters = async () => {
   for await (const poster of posters) {
