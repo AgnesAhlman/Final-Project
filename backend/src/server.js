@@ -26,6 +26,11 @@ app.use('/login', loginRouter);
 
 app.use('/cart', authenticateUser, cartRouter);
 
+app.get('/images/:filename', (req, res) => {
+  const { filename } = req.params;
+  res.sendFile(`images/${filename}`, { root: __dirname });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
