@@ -61,11 +61,10 @@ const Cart = () => {
                 <FaTimes />
               </button>
             </Popup.Button>
-            <h1> Well this is awkward... </h1>
+            <h1> Soon ready! </h1>
             <p>
-              We apologize for the inconvenience, but our ordering system is
-              currently under maintenance. Thank you for your patience and
-              understanding.
+              The posters are not yet quite ready for ordering; please check
+              back in a couple of weeks to order your posters.
             </p>
           </Popup.Content>
         </Popup>

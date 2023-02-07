@@ -7,8 +7,16 @@ export const Button = styled.div`
   margin-bottom: 1rem;
 
   && button {
+    width: 48px;
+    height: 48px;
+
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    & svg {
+      height: 18px;
+      width: 18px;
+    }
   }
 `;

@@ -2,7 +2,7 @@
  * use environment variable API_URL to connect to the API,
  * if it doesn't exist default to localhost
  */
-const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:15000';
 
 // Singleton
 let accessToken = null;
