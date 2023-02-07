@@ -12,7 +12,7 @@ const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/final-project';
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 15000;
 const app = express();
 
 app.use(cors());
