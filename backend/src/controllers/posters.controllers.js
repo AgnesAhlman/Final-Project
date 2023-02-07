@@ -1,17 +1,20 @@
 import { isValidObjectId } from 'mongoose';
 import { Poster } from '../models/posters.model';
 
-const mapPosterImgUrls = (posters, protocol, host) => posters.map((poster) => ({
-  ...poster.toObject(),
-  img: `${protocol}://${host}/images/${poster.img}`,
-  roomImg: `${protocol}://${host}/images/${poster.roomImg}`
-}));
+const mapPosterImgUrls = (posters, host) => {
+  const protocol = host === 'api.artbyahlman.se' ? 'https' : 'http';
+
+  return posters.map((poster) => ({
+    ...poster.toObject(),
+    img: `${protocol}://${host}/images/${poster.img}`,
+    roomImg: `${protocol}://${host}/images/${poster.roomImg}`
+  }));
+};
 
 export const getPosters = async (req, res) => {
   try {
     const posters = await Poster.find();
-
-    const posterWithCorrectImage = mapPosterImgUrls(posters, req.protocol, req.headers.host);
+    const posterWithCorrectImage = mapPosterImgUrls(posters, req.headers.host);
 
     return res.status(200).json({
       success: true,
@@ -41,7 +44,7 @@ export const getPosterById = async (req, res) => {
       });
     }
 
-    const [poster] = mapPosterImgUrls([singlePoster], req.protocol, req.headers.host);
+    const [poster] = mapPosterImgUrls([singlePoster], req.headers.host);
 
     return res.status(200).json({
       success: true,
