@@ -1,12 +1,21 @@
 import { isValidObjectId } from 'mongoose';
 import { Poster } from '../models/posters.model';
 
+const mapPosterImgUrls = (posters, protocol, host) => posters.map((poster) => ({
+  ...poster.toObject(),
+  img: `${protocol}://${host}/images/${poster.img}`,
+  roomImg: `${protocol}://${host}/images/${poster.roomImg}`
+}));
+
 export const getPosters = async (req, res) => {
   try {
     const posters = await Poster.find();
+
+    const posterWithCorrectImage = mapPosterImgUrls(posters, req.protocol, req.headers.host);
+
     return res.status(200).json({
       success: true,
-      response: posters
+      response: posterWithCorrectImage
     });
   } catch (err) {
     return res.status(404).json(err);
@@ -32,9 +41,11 @@ export const getPosterById = async (req, res) => {
       });
     }
 
+    const [poster] = mapPosterImgUrls([singlePoster], req.protocol, req.headers.host);
+
     return res.status(200).json({
       success: true,
-      response: singlePoster
+      response: poster
     });
   } catch (err) {
     return res.status(500).json(err);
