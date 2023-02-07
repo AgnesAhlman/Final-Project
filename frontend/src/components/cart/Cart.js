@@ -63,8 +63,8 @@ const Cart = () => {
             </Popup.Button>
             <h1> Soon ready! </h1>
             <p>
-              The posters are not yet quite ready for ordering; please check
-              back in a couple of weeks to order your posters.
+              The posters are not quite ready for ordering; please check back in
+              a couple of weeks to order your posters.
             </p>
           </Popup.Content>
         </Popup>
