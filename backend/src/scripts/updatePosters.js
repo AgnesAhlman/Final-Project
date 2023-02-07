@@ -2,8 +2,9 @@ import mongoose from 'mongoose';
 import { Poster } from '../models/posters.model';
 
 import posters from '../data/database_posters.json';
+import { getConnectionUrl } from '../utils';
 
-const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/final-project';
+const mongoUrl = getConnectionUrl();
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 

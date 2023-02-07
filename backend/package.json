@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Starter project to get up and running with express quickly",
   "scripts": {
-    "start": "babel-node src/server.js",
     "dev": "nodemon src/server.js --exec babel-node",
+    "start": "babel-node src/server.js",
+    "start:prod": "babel-node -r dotenv/config src/server.js",
     "getPosters": "babel-node src/scripts/getPosters.js",
+    "getPosters:prod": "babel-node -r dotenv/config src/scripts/getPosters.js",
     "updatePosters": "babel-node src/scripts/updatePosters.js",
     "updatePosters:prod": "babel-node -r dotenv/config src/scripts/updatePosters.js"
   },

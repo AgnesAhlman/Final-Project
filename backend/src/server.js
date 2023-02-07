@@ -7,8 +7,9 @@ import registerRouter from './routes/register.routes';
 import loginRouter from './routes/login.routes';
 import cartRouter from './routes/cart.routes';
 import { authenticateUser } from './middleware/auth';
+import { getConnectionUrl } from './utils';
 
-const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/final-project';
+const mongoUrl = getConnectionUrl();
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 

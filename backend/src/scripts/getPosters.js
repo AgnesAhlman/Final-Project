@@ -3,8 +3,9 @@ import { exit } from 'process';
 import mongoose from 'mongoose';
 import path from 'path';
 import { Poster } from '../models/posters.model';
+import { getConnectionUrl } from '../utils';
 
-const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/final-project';
+const mongoUrl = getConnectionUrl();
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 
