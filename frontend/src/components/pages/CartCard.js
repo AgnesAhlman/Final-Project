@@ -16,7 +16,7 @@ const CartCard = () => {
               <CartCardContainer.Product>
                 <img key={cartProduct._id} src={cartProduct.img} alt="" />
 
-                <p> {cartProduct.quantity} st</p>
+                <p> {cartProduct.quantity} </p>
                 <p>{cartProduct.price} kr</p>
               </CartCardContainer.Product>
             );
